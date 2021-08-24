@@ -107,7 +107,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                               ),
                                               Text("netflix"),
                                               Card(
-                                                child: NetworkImage(),
+                                                
                                               )
                                             ],
                                           ),
