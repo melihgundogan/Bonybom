@@ -1,5 +1,6 @@
 import 'package:bonybom_app/models/category_model.dart';
 import 'package:bonybom_app/pages/auth/info.dart';
+import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
@@ -106,7 +107,15 @@ class _CategorySelectState extends State<CategorySelect> {
               bottom: ww(context, 25),
               right: ww(context, 25),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (
+                        context,
+                      ) =>
+                              NotificationPage()));
+                },
                 shape: CircleBorder(),
                 height: hh(context, 48),
                 color: Clr.mainBlue,
@@ -141,7 +150,7 @@ class CategoryWidget extends StatelessWidget {
       child: MaterialButton(
         padding: EdgeInsets.all(0),
         onPressed: () {
-          print(item.kategoriAdi);
+          print(item.name);
         },
         child: Container(
           width: (s.width - ww(context, 92)) / 3,
@@ -173,7 +182,7 @@ class CategoryWidget extends StatelessWidget {
                     bottom: ww(context, 10),
                   ),
                   child: Text(
-                    item.kategoriAdi,
+                    item.name,
                     style: TextStyle(
                       fontSize: hh(context, 11),
                       fontWeight: FontWeight.w600,
@@ -188,7 +197,7 @@ class CategoryWidget extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(
-                item.kategoriResmi,
+                item.image,
               ),
               fit: BoxFit.cover,
             ),
