@@ -76,6 +76,7 @@ class _InfoState extends State<Info> {
                         context,
                         s,
                         bgColor: Clr.darkestGray.withOpacity(0.7),
+                        onPressed: () {},
                         child: Row(
                           children: [
                             Padding(
@@ -160,7 +161,7 @@ class _InfoState extends State<Info> {
                             SizedBox(width: ww(context, 12)),
                             Expanded(
                               child: Text(
-                                "Konum Seç",
+                                "Cinsiyet Seç",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: hh(context, 18),
