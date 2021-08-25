@@ -17,7 +17,7 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(top: sw / 40, bottom: sw / 40),
+        padding: EdgeInsets.only(top: sw / 18, bottom: sw / 40),
         child: Column(
           children: [
             Row(
@@ -100,7 +100,7 @@ class _ProfileState extends State<Profile> {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: sw / 10,
+                      height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
@@ -108,10 +108,13 @@ class _ProfileState extends State<Profile> {
                             Icons.notifications_outlined,
                             color: Colors.black,
                           ),
-                          Text(
-                            "Bildirimler",
-                            style: TextStyle(
-                                fontSize: sw / 25, color: Colors.black),
+                          Padding(
+                            padding: EdgeInsets.only(left: sw / 45),
+                            child: Text(
+                              "Bildirimler",
+                              style: TextStyle(
+                                  fontSize: sw / 20, color: Colors.black),
+                            ),
                           ),
                           Spacer(),
                           Icon(
@@ -125,7 +128,7 @@ class _ProfileState extends State<Profile> {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: sw / 10,
+                      height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
@@ -133,10 +136,13 @@ class _ProfileState extends State<Profile> {
                             Icons.category_outlined,
                             color: Colors.black,
                           ),
-                          Text(
-                            "Kategorileri Düzenle",
-                            style: TextStyle(
-                                fontSize: sw / 25, color: Colors.black),
+                          Padding(
+                            padding: EdgeInsets.only(left: sw / 45),
+                            child: Text(
+                              "Kategorileri Düzenle",
+                              style: TextStyle(
+                                  fontSize: sw / 20, color: Colors.black),
+                            ),
                           ),
                           Spacer(),
                           Icon(
@@ -148,7 +154,7 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                   Container(
-                    height: sw / 10,
+                    height: sw / 7,
                     padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                     child: Row(
                       children: [
@@ -156,10 +162,13 @@ class _ProfileState extends State<Profile> {
                           Icons.dark_mode_outlined,
                           color: Colors.black,
                         ),
-                        Text(
-                          "Karanlık Mod",
-                          style:
-                              TextStyle(fontSize: sw / 25, color: Colors.black),
+                        Padding(
+                          padding: EdgeInsets.only(left: sw / 45),
+                          child: Text(
+                            "Karanlık Mod",
+                            style: TextStyle(
+                                fontSize: sw / 20, color: Colors.black),
+                          ),
                         ),
                         Spacer(),
                         Switch(
@@ -191,7 +200,7 @@ class _ProfileState extends State<Profile> {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: sw / 10,
+                      height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
@@ -199,10 +208,13 @@ class _ProfileState extends State<Profile> {
                             Icons.favorite,
                             color: Colors.red,
                           ),
-                          Text(
-                            "BonyBom'u Arkadaşlarınla Paylaş",
-                            style: TextStyle(
-                                fontSize: sw / 25, color: Colors.black),
+                          Padding(
+                            padding: EdgeInsets.only(left: sw / 45),
+                            child: Text(
+                              "Bonybom'u Arkadaşlarınla Paylaş",
+                              style: TextStyle(
+                                  fontSize: sw / 20, color: Colors.black),
+                            ),
                           ),
                         ],
                       ),
@@ -211,7 +223,7 @@ class _ProfileState extends State<Profile> {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: sw / 10,
+                      height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
@@ -219,10 +231,13 @@ class _ProfileState extends State<Profile> {
                             Icons.email_outlined,
                             color: Colors.black,
                           ),
-                          Text(
-                            "Bize Ulaşın",
-                            style: TextStyle(
-                                fontSize: sw / 25, color: Colors.black),
+                          Padding(
+                            padding: EdgeInsets.only(left: sw / 45),
+                            child: Text(
+                              "Bize Ulaşın",
+                              style: TextStyle(
+                                  fontSize: sw / 20, color: Colors.black),
+                            ),
                           ),
                           Spacer(),
                           Icon(
@@ -236,7 +251,7 @@ class _ProfileState extends State<Profile> {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: sw / 10,
+                      height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
@@ -245,10 +260,13 @@ class _ProfileState extends State<Profile> {
                             color: Colors.black,
                             size: sw / 18,
                           ),
-                          Text(
-                            "Bildirimler",
-                            style: TextStyle(
-                                fontSize: sw / 25, color: Colors.black),
+                          Padding(
+                            padding: EdgeInsets.only(left: sw / 45),
+                            child: Text(
+                              "Bonybom Hakkında",
+                              style: TextStyle(
+                                  fontSize: sw / 20, color: Colors.black),
+                            ),
                           ),
                           Spacer(),
                           Icon(
@@ -262,18 +280,21 @@ class _ProfileState extends State<Profile> {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: sw / 10,
+                      height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
                           Icon(
-                            Icons.notifications_outlined,
+                            Icons.privacy_tip_outlined,
                             color: Colors.black,
                           ),
-                          Text(
-                            "Bildirimler",
-                            style: TextStyle(
-                                fontSize: sw / 25, color: Colors.black),
+                          Padding(
+                            padding: EdgeInsets.only(left: sw / 45),
+                            child: Text(
+                              "Gizlilik Politikası",
+                              style: TextStyle(
+                                  fontSize: sw / 20, color: Colors.black),
+                            ),
                           ),
                           Spacer(),
                           Icon(
@@ -287,18 +308,21 @@ class _ProfileState extends State<Profile> {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: sw / 10,
+                      height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
                           Icon(
-                            Icons.notifications_outlined,
+                            Icons.description_outlined,
                             color: Colors.black,
                           ),
-                          Text(
-                            "Bildirimler",
-                            style: TextStyle(
-                                fontSize: sw / 25, color: Colors.black),
+                          Padding(
+                            padding: EdgeInsets.only(left: sw / 45),
+                            child: Text(
+                              "Kullanım Koşulları",
+                              style: TextStyle(
+                                  fontSize: sw / 20, color: Colors.black),
+                            ),
                           ),
                           Spacer(),
                           Icon(
