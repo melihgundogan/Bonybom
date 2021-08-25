@@ -34,7 +34,7 @@ class _InfoState extends State<Info> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/images/AutgBg.png"),
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -46,109 +46,133 @@ class _InfoState extends State<Info> {
                 physics: BouncingScrollPhysics(),
                 child: Column(
                   children: [
-                    SizedBox(height: hh(context, 194)),
-                    Image.asset(
-                      "assets/icons/Logo.png",
-                      width: ww(context, 38.13),
-                      height: hh(context, 52.65),
-                    ),
-                    SizedBox(height: hh(context, 84)),
-                    authButton(
-                      context,
-                      s,
-                      bgColor: Clr.darkestGray.withOpacity(0.7),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: ww(context, 12)),
-                            child: Icon(
-                              Ionicons.calendar_outline,
-                              size: ww(context, 30),
-                              color: Clr.white.withOpacity(0.75),
-                            ),
-                          ),
-                          SizedBox(width: ww(context, 12)),
-                          Expanded(
-                            child: Text(
-                              "Doğum Tarihi",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: hh(context, 18),
-                                fontWeight: FontWeight.w700,
-                                color: Clr.white,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: ww(context, 24)),
-                        ],
+                    Padding(
+                      padding: EdgeInsets.only(top: s.width / 3),
+                      child: Image.asset(
+                        "assets/icons/Logo.png",
+                        width: ww(context, 45.0),
+                        height: hh(context, 65.0),
                       ),
                     ),
-                    SizedBox(height: 33),
-                    authButton(
-                      context,
-                      s,
-                      bgColor: Clr.darkestGray.withOpacity(0.7),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: ww(context, 12)),
-                            child: Icon(
-                              Ionicons.map_outline,
-                              size: ww(context, 30),
-                              color: Clr.white.withOpacity(0.75),
-                            ),
-                          ),
-                          SizedBox(width: ww(context, 12)),
-                          Expanded(
-                            child: Text(
-                              "Konum Seç",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: hh(context, 18),
-                                fontWeight: FontWeight.w700,
-                                color: Clr.white,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: ww(context, 24)),
-                        ],
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: s.width / 50,
+                          right: s.width / 50,
+                          left: s.width / 50),
+                      child: Text(
+                        "Yaşına ve bulunduğun yere özel öneriler sunabilmemiz için aşağıdaki ayarlamaları yapman gerekli",
+                        style: TextStyle(
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(height: 33),
-                    authButton(
-                      context,
-                      s,
-                      bgColor: Clr.darkestGray.withOpacity(0.7),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: ww(context, 12)),
-                            child: Icon(
-                              Ionicons.person_outline,
-                              size: ww(context, 30),
-                              color: Clr.white.withOpacity(0.75),
-                            ),
-                          ),
-                          SizedBox(width: ww(context, 12)),
-                          Expanded(
-                            child: Text(
-                              "Konum Seç",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: hh(context, 18),
-                                fontWeight: FontWeight.w700,
-                                color: Clr.white,
-                                letterSpacing: 1,
+                    Padding(
+                      padding: EdgeInsets.only(top: s.width / 10),
+                      child: authButton(
+                        context,
+                        s,
+                        bgColor: Clr.darkestGray.withOpacity(0.7),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: ww(context, 12)),
+                              child: Icon(
+                                Ionicons.calendar_outline,
+                                size: ww(context, 30),
+                                color: Clr.white.withOpacity(0.75),
                               ),
                             ),
-                          ),
-                          SizedBox(width: ww(context, 24)),
-                        ],
+                            SizedBox(width: ww(context, 12)),
+                            Expanded(
+                              child: Text(
+                                "Doğum Tarihi",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: hh(context, 18),
+                                  fontWeight: FontWeight.w700,
+                                  color: Clr.white,
+                                  letterSpacing: 1,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: ww(context, 24)),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: s.width / 15),
+                      child: authButton(
+                        context,
+                        s,
+                        bgColor: Clr.darkestGray.withOpacity(0.7),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: ww(context, 12)),
+                              child: Icon(
+                                Ionicons.map_outline,
+                                size: ww(context, 30),
+                                color: Clr.white.withOpacity(0.75),
+                              ),
+                            ),
+                            SizedBox(width: ww(context, 12)),
+                            Expanded(
+                              child: Text(
+                                "Konum Seç",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: hh(context, 18),
+                                  fontWeight: FontWeight.w700,
+                                  color: Clr.white,
+                                  letterSpacing: 1,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: ww(context, 24)),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: s.width / 15),
+                      child: authButton(
+                        context,
+                        s,
+                        bgColor: Clr.darkestGray.withOpacity(0.7),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: ww(context, 12)),
+                              child: Icon(
+                                Ionicons.person_outline,
+                                size: ww(context, 30),
+                                color: Clr.white.withOpacity(0.75),
+                              ),
+                            ),
+                            SizedBox(width: ww(context, 12)),
+                            Expanded(
+                              child: Text(
+                                "Konum Seç",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: hh(context, 18),
+                                  fontWeight: FontWeight.w700,
+                                  color: Clr.white,
+                                  letterSpacing: 1,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: ww(context, 24)),
+                          ],
+                        ),
                       ),
                     ),
                   ],
