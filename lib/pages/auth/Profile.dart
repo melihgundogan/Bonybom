@@ -192,7 +192,7 @@ class _ProfileState extends State<Profile> {
                     child: Padding(
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
-                        "BonyBom",
+                        "BONYBOM",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
