@@ -149,9 +149,7 @@ class CategoryWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(ww(context, 20)),
       child: MaterialButton(
         padding: EdgeInsets.all(0),
-        onPressed: () {
-          print(item.name);
-        },
+        onPressed: () {},
         child: Container(
           width: (s.width - ww(context, 92)) / 3,
           height: ((s.width - ww(context, 92)) / 3) * 4 / 3,
@@ -180,15 +178,6 @@ class CategoryWidget extends StatelessWidget {
                     left: ww(context, 10),
                     right: ww(context, 10),
                     bottom: ww(context, 10),
-                  ),
-                  child: Text(
-                    item.name,
-                    style: TextStyle(
-                      fontSize: hh(context, 11),
-                      fontWeight: FontWeight.w600,
-                      color: Clr.white,
-                      letterSpacing: 1,
-                    ),
                   ),
                 ),
               ),

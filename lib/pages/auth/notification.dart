@@ -1,3 +1,5 @@
+import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
+import 'package:bonybom_app/pages/auth/notification_pages/recorded.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -8,124 +10,86 @@ class NotificationPage extends StatefulWidget {
 class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.grey.shade400,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Card(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    color: Colors.white70,
-                  ),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(21),
-                      bottomRight: Radius.circular(21)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.home_outlined,
-                            size: 45,
-                          )),
-                      SizedBox(
-                        width: 40,
-                        height: 40,
-                        child: Image.asset("assets/icons/Logo.png"),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.person_outline,
-                          size: 45,
+    return new MaterialApp(
+      debugShowCheckedModeBanner: false,
+      color: Colors.white,
+      title: 'msc',
+      home: new DefaultTabController(
+        length: 2,
+        child: new Scaffold(
+          appBar: new PreferredSize(
+            preferredSize: Size.fromHeight(130),
+            child: new Container(
+              color: Colors.grey.shade300,
+              child: new SafeArea(
+                child: Column(
+                  children: <Widget>[
+                    new Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(21),
+                              bottomRight: Radius.circular(21)),
+                          color: Colors.white,
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Column(
-                children: [
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Card(
-                            color: Colors.grey.shade400,
-                            shadowColor: Colors.grey.shade400,
-                            child: Text(
-                              "Kaydedilenler",
-                              style: TextStyle(fontSize: 21),
-                            ),
-                          ),
-                          Card(
-                            shadowColor: Colors.grey.shade400,
-                            color: Colors.grey.shade400,
-                            child: Text(
-                              "Beğenilenler",
-                              style: TextStyle(fontSize: 21),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    color: Colors.white,
-                    height: 1000,
-                    width: 500,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                            top: 10,
-                          ),
-                          child: Row(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 30),
+                          child: new Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Expanded(
-                                child: Container(
-                                  height: 150,
-                                  child: Card(
-                                    child: Row(
-                                      children: <Widget>[
-                                        Expanded(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: <Widget>[
-                                              Text(
-                                                "Ömer Şirketi açtığında çok yakışıklıyıdı ama niyese çöktü",
-                                                style: TextStyle(fontSize: 20),
-                                              ),
-                                              Text("netflix"),
-                                              Card(
-                                                
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                              IconButton(
+                                icon: Icon(
+                                  Icons.home_outlined,
+                                  size: 45,
                                 ),
+                                onPressed: () {},
+                              ),
+                              SizedBox(
+                                height: 40,
+                                width: 40,
+                                child: Image.asset("assets/icons/Logo.png"),
+                              ),
+                              IconButton(
+                                icon: Icon(
+                                  Icons.person_outline,
+                                  size: 45,
+                                ),
+                                onPressed: () {},
                               ),
                             ],
                           ),
-                        )
-                      ],
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 50,
+                      child: new TabBar(
+                        tabs: [
+                          new Text(
+                            "Kaydedilenler",
+                            style: TextStyle(
+                                color: Colors.grey.shade700,
+                                fontSize: 21,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          new Text(
+                            "Beğenilenler",
+                            style: TextStyle(
+                                color: Colors.grey.shade700,
+                                fontSize: 21,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ],
+            ),
+          ),
+          body: new TabBarView(
+            children: <Widget>[new recordedPage(), new FavoritesPage()],
           ),
         ),
       ),
