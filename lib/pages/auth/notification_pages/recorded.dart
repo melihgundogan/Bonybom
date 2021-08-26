@@ -85,13 +85,14 @@ class _recordedPageState extends State<recordedPage> {
               return Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1, childAspectRatio: 4 / 1),
+                      crossAxisCount: 1, childAspectRatio: 4 / 1.12),
                   shrinkWrap: true,
                   itemCount: favoriteList!.length,
                   itemBuilder: (context, indeks) {
                     var favorite = favoriteList[indeks];
                     return Container(
                       child: new Card(
+                        shadowColor: Colors.black,
                         child: Row(
                           children: [
                             Expanded(
@@ -100,12 +101,16 @@ class _recordedPageState extends State<recordedPage> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      favorite.favorite_text,
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                      textAlign: TextAlign.left,
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 25, right: 5),
+                                      child: Text(
+                                        favorite.favorite_text,
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.left,
+                                      ),
                                     ),
                                     Text(
                                       favorite.favorite_subText,
@@ -115,26 +120,37 @@ class _recordedPageState extends State<recordedPage> {
                                 ),
                               ),
                             ),
-                            Column(
-                              children: [
-                                Icon(Icons.notifications_outlined),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Icon(Icons.cancel_outlined),
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.only(right: 7),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.notifications_outlined,
+                                    color: Colors.grey.shade700,
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Icon(
+                                    Icons.cancel_outlined,
+                                    color: Colors.grey.shade700,
+                                  ),
+                                ],
+                              ),
                             ),
                             Container(
                               padding: const EdgeInsets.only(
                                   right: 15, top: 5, bottom: 5),
-                              height: 100,
+                              height: 90,
                               width: 120,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(21),
-                              ),
-                              child: new Image.network(
-                                favorite.favorite_imgUrl,
-                                fit: BoxFit.fitWidth,
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                      favorite.favorite_imgUrl,
+                                    ),
+                                    fit: BoxFit.cover),
                               ),
                             ),
                           ],

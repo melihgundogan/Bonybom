@@ -1,3 +1,4 @@
+import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -24,7 +25,12 @@ class _ProfileState extends State<Profile> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NotificationPage()));
+                    },
                     icon: Icon(
                       Icons.home_outlined,
                       size: sw / 10,

@@ -1,6 +1,8 @@
+import 'package:bonybom_app/pages/auth/Profile.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/recorded.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NotificationPage extends StatefulWidget {
   @override
@@ -11,79 +13,87 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      debugShowCheckedModeBanner: false,
       color: Colors.white,
+      debugShowCheckedModeBanner: false,
       title: 'msc',
       home: new DefaultTabController(
         length: 2,
         child: new Scaffold(
           appBar: new PreferredSize(
-            preferredSize: Size.fromHeight(130),
-            child: new Container(
-              color: Colors.grey.shade300,
-              child: new SafeArea(
-                child: Column(
-                  children: <Widget>[
-                    new Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(21),
-                              bottomRight: Radius.circular(21)),
-                          color: Colors.white,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 30),
-                          child: new Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IconButton(
-                                icon: Icon(
-                                  Icons.home_outlined,
-                                  size: 45,
+            preferredSize: Size.fromHeight(140),
+            child: Expanded(
+              child: new Container(
+                color: Colors.grey.shade300,
+                child: new SafeArea(
+                  child: Column(
+                    children: <Widget>[
+                      new Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(31),
+                                  bottomRight: Radius.circular(31)),
+                              color: Colors.white),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20, right: 30),
+                            child: new Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.home_outlined,
+                                    size: 45,
+                                  ),
+                                  onPressed: () {},
                                 ),
-                                onPressed: () {},
-                              ),
-                              SizedBox(
-                                height: 40,
-                                width: 40,
-                                child: Image.asset("assets/icons/Logo.png"),
-                              ),
-                              IconButton(
-                                icon: Icon(
-                                  Icons.person_outline,
-                                  size: 45,
+                                SizedBox(
+                                  height: 40,
+                                  width: 40,
+                                  child: Image.asset("assets/icons/Logo.png"),
                                 ),
-                                onPressed: () {},
-                              ),
-                            ],
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.person_outline,
+                                    size: 45,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Profile()));
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 50,
-                      child: new TabBar(
-                        tabs: [
-                          new Text(
-                            "Kaydedilenler",
-                            style: TextStyle(
-                                color: Colors.grey.shade700,
-                                fontSize: 21,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          new Text(
-                            "Beğenilenler",
-                            style: TextStyle(
-                                color: Colors.grey.shade700,
-                                fontSize: 21,
-                                fontWeight: FontWeight.bold),
-                          )
-                        ],
+                      SizedBox(
+                        height: 50,
+                        child: new TabBar(
+                          tabs: [
+                            new Text(
+                              "Kaydedilenler",
+                              style: GoogleFonts.poppins(
+                                fontStyle: FontStyle.normal,
+                                color: Colors.grey.shade900,
+                                fontSize: 19,
+                              ),
+                            ),
+                            new Text(
+                              "Beğenilenler",
+                              style: GoogleFonts.poppins(
+                                fontStyle: FontStyle.normal,
+                                color: Colors.grey.shade900,
+                                fontSize: 19,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

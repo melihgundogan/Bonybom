@@ -5,6 +5,7 @@ class Clr {
   static Color bgLight = Color(0xffefefef);
   static Color mainBlue = Color(0xff0B72EF);
   static Color darkestGray = Color(0xff202020);
+  static Color greyLike = Color(0xff404040);
   static Color white = Colors.white;
   static Color black = Colors.black;
 }
