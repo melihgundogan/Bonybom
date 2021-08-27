@@ -3,6 +3,7 @@ import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/recorded.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
 
 class NotificationPage extends StatefulWidget {
   @override
@@ -12,6 +13,10 @@ class NotificationPage extends StatefulWidget {
 class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.white,
+      statusBarBrightness: Brightness.dark,
+    ));
     return new MaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
@@ -23,7 +28,7 @@ class _NotificationPageState extends State<NotificationPage> {
             preferredSize: Size.fromHeight(140),
             child: Expanded(
               child: new Container(
-                color: Colors.grey.shade300,
+                color: Colors.grey.shade200,
                 child: new SafeArea(
                   child: Column(
                     children: <Widget>[
