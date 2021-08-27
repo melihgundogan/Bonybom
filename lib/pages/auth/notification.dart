@@ -74,31 +74,6 @@ class _NotificationPageState extends State<NotificationPage> {
                                       Icons.person_outline,
                                       size: s.width / 10,
                                     )),
-/*
-                                IconButton(
-                                  icon: Icon(
-                                    Icons.home_outlined,
-                                    size: s.width / 10,
-                                  ),
-                                  onPressed: () {},
-                                ),
-                                SizedBox(
-                                  height: s.width / 12,
-                                  width: s.width / 12,
-                                  child: Image.asset("assets/icons/Logo.png"),
-                                ),
-                                IconButton(
-                                  icon: Icon(
-                                    Icons.person_outline,
-                                    size: s.width / 10,
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Profile()));
-                                  },
-                                ),*/
                               ],
                             ),
                           ),
