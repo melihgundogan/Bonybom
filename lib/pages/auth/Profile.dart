@@ -38,10 +38,13 @@ class _ProfileState extends State<Profile> {
                         Icons.home_outlined,
                         size: sw / 10,
                       )),
-                  Image.asset(
-                    "assets/icons/Logo.png",
-                    width: sw / 12,
-                    height: sw / 12,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.asset(
+                      "assets/icons/Logo.png",
+                      width: sw / 12,
+                      height: sw / 12,
+                    ),
                   ),
                   IconButton(
                       onPressed: () {

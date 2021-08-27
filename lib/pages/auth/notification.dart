@@ -58,10 +58,13 @@ class _NotificationPageState extends State<NotificationPage> {
                                       Icons.home_outlined,
                                       size: s.width / 10,
                                     )),
-                                Image.asset(
-                                  "assets/icons/Logo.png",
-                                  width: s.width / 12,
-                                  height: s.width / 12,
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    "assets/icons/Logo.png",
+                                    width: s.width / 12,
+                                    height: s.width / 12,
+                                  ),
                                 ),
                                 IconButton(
                                     onPressed: () {
