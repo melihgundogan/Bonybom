@@ -18,38 +18,44 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(top: sw / 18, bottom: sw / 40),
+        padding: EdgeInsets.only(top: sw / 12, bottom: sw / 40),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => NotificationPage()));
-                    },
-                    icon: Icon(
-                      Icons.home_outlined,
-                      size: sw / 10,
-                    )),
-                Padding(
-                  padding: EdgeInsets.only(right: sw / 10, left: sw / 10),
-                  child: Image.asset(
+            Padding(
+              padding: EdgeInsets.only(right: sw / 15, left: sw / 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NotificationPage()));
+                      },
+                      icon: Icon(
+                        Icons.home_outlined,
+                        size: sw / 10,
+                      )),
+                  Image.asset(
                     "assets/icons/Logo.png",
-                    width: sw / 10,
-                    height: sw / 10,
+                    width: sw / 12,
+                    height: sw / 12,
                   ),
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.person_outline,
-                      size: sw / 10,
-                    )),
-              ],
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NotificationPage()));
+                      },
+                      icon: Icon(
+                        Icons.person_outline,
+                        size: sw / 10,
+                      )),
+                ],
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(top: sw / 25),

@@ -17,6 +17,8 @@ class _NotificationPageState extends State<NotificationPage> {
       statusBarColor: Colors.white,
       statusBarBrightness: Brightness.dark,
     ));
+    final s = MediaQuery.of(context).size;
+
     return new MaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
@@ -25,7 +27,7 @@ class _NotificationPageState extends State<NotificationPage> {
         length: 2,
         child: new Scaffold(
           appBar: new PreferredSize(
-            preferredSize: Size.fromHeight(140),
+            preferredSize: Size.fromHeight(s.width / 3.5),
             child: Expanded(
               child: new Container(
                 color: Colors.grey.shade200,
@@ -46,21 +48,49 @@ class _NotificationPageState extends State<NotificationPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 IconButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Profile()));
+                                    },
+                                    icon: Icon(
+                                      Icons.home_outlined,
+                                      size: s.width / 10,
+                                    )),
+                                Image.asset(
+                                  "assets/icons/Logo.png",
+                                  width: s.width / 12,
+                                  height: s.width / 12,
+                                ),
+                                IconButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Profile()));
+                                    },
+                                    icon: Icon(
+                                      Icons.person_outline,
+                                      size: s.width / 10,
+                                    )),
+/*
+                                IconButton(
                                   icon: Icon(
                                     Icons.home_outlined,
-                                    size: 45,
+                                    size: s.width / 10,
                                   ),
                                   onPressed: () {},
                                 ),
                                 SizedBox(
-                                  height: 40,
-                                  width: 40,
+                                  height: s.width / 12,
+                                  width: s.width / 12,
                                   child: Image.asset("assets/icons/Logo.png"),
                                 ),
                                 IconButton(
                                   icon: Icon(
                                     Icons.person_outline,
-                                    size: 45,
+                                    size: s.width / 10,
                                   ),
                                   onPressed: () {
                                     Navigator.push(
@@ -68,7 +98,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                         MaterialPageRoute(
                                             builder: (context) => Profile()));
                                   },
-                                ),
+                                ),*/
                               ],
                             ),
                           ),
