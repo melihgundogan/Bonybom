@@ -3,6 +3,7 @@ import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/recorded.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
 
 class NotificationPage extends StatefulWidget {
   @override
@@ -12,6 +13,12 @@ class NotificationPage extends StatefulWidget {
 class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.white,
+      statusBarBrightness: Brightness.dark,
+    ));
+    final s = MediaQuery.of(context).size;
+
     return new MaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
@@ -20,10 +27,10 @@ class _NotificationPageState extends State<NotificationPage> {
         length: 2,
         child: new Scaffold(
           appBar: new PreferredSize(
-            preferredSize: Size.fromHeight(140),
+            preferredSize: Size.fromHeight(s.width / 3.5),
             child: Expanded(
               child: new Container(
-                color: Colors.grey.shade300,
+                color: Colors.grey.shade200,
                 child: new SafeArea(
                   child: Column(
                     children: <Widget>[
@@ -41,29 +48,35 @@ class _NotificationPageState extends State<NotificationPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 IconButton(
-                                  icon: Icon(
-                                    Icons.home_outlined,
-                                    size: 45,
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Profile()));
+                                    },
+                                    icon: Icon(
+                                      Icons.home_outlined,
+                                      size: s.width / 10,
+                                    )),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    "assets/icons/Logo.png",
+                                    width: s.width / 12,
+                                    height: s.width / 12,
                                   ),
-                                  onPressed: () {},
-                                ),
-                                SizedBox(
-                                  height: 40,
-                                  width: 40,
-                                  child: Image.asset("assets/icons/Logo.png"),
                                 ),
                                 IconButton(
-                                  icon: Icon(
-                                    Icons.person_outline,
-                                    size: 45, 
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Profile()));
-                                  },
-                                ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Profile()));
+                                    },
+                                    icon: Icon(
+                                      Icons.person_outline,
+                                      size: s.width / 10,
+                                    )),
                               ],
                             ),
                           ),
