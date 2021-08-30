@@ -1,4 +1,5 @@
 import 'package:bonybom_app/pages/auth/notification.dart';
+import 'package:bonybom_app/pages/auth/special_category.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -39,7 +40,12 @@ class _ProfileState extends State<Profile> {
                         size: sw / 10,
                       )),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SpecialCategory()));
+                    },
                     child: Image.asset(
                       "assets/icons/Logo.png",
                       width: sw / 12,
