@@ -55,7 +55,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                 IconButton(
                                   icon: Icon(
                                     Icons.person_outline,
-                                    size: 45,
+                                    size: 45, 
                                   ),
                                   onPressed: () {
                                     Navigator.push(
