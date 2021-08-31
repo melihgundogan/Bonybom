@@ -1,6 +1,7 @@
 import 'package:bonybom_app/pages/auth/userpages/editprofile.dart';
 import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/pages/auth/special_category.dart';
+import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -13,6 +14,7 @@ class _userPageState extends State<userPage> {
   bool switchKontrol = false;
   var username = "Ali Pek Yılmaz";
   var userMail = "AliPekYılmaz@gmail.com";
+  var _svgIcon = new SvgIcn();
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -30,6 +32,7 @@ class _userPageState extends State<userPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  GestureDetector(onTap: () {}, child: _svgIcon.home),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -43,17 +46,7 @@ class _userPageState extends State<userPage> {
                       height: sw / 12,
                     ),
                   ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => NotificationPage()));
-                      },
-                      icon: Icon(
-                        Icons.person_outline,
-                        size: sw / 10,
-                      )),
+                  GestureDetector(onTap: () {}, child: _svgIcon.profile),
                 ],
               ),
             ),
