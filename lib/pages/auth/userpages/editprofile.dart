@@ -131,10 +131,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.notifications_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -159,10 +155,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.notifications_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -187,10 +179,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.category_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -220,10 +208,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.notifications_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -253,10 +237,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.notifications_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -286,10 +266,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.notifications_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -325,10 +301,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -348,10 +320,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.email_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -376,11 +344,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          ImageIcon(
-                            AssetImage("assets/icons/Logo.png"),
-                            color: Colors.black,
-                            size: sw / 18,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
@@ -405,10 +368,6 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.privacy_tip_outlined,
-                            color: Colors.black,
-                          ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
