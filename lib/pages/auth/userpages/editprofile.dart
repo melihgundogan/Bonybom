@@ -114,7 +114,7 @@ class _editProfileState extends State<editProfile> {
                     child: Padding(
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
-                        "AYARLAR",
+                        "HESABIM",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -138,7 +138,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Profili Düzenle",
+                              "Ad Soyad",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -166,7 +166,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Bildirimler",
+                              "Doğum Tarihi",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -194,7 +194,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Kategorileri Düzenle",
+                              "Cep Telefon Numarası",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -227,7 +227,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Profili Düzenle",
+                              "E-posta",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -260,7 +260,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Profili Düzenle",
+                              "Şifre",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -293,7 +293,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Profili Düzenle",
+                              "Konum",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -313,7 +313,7 @@ class _editProfileState extends State<editProfile> {
                     child: Padding(
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
-                        "BONYBOM",
+                        "HESAP İŞLEMLERİ",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -332,7 +332,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Bonybom'u Arkadaşlarınla Paylaş",
+                              "Önbelleği Temizle",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -384,7 +384,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Bonybom Hakkında",
+                              "Oturumu Kapat",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),
@@ -412,35 +412,7 @@ class _editProfileState extends State<editProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Gizlilik Politikası",
-                              style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
-                            ),
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.keyboard_arrow_right,
-                            color: Colors.black,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: sw / 7,
-                      padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.description_outlined,
-                            color: Colors.black,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: sw / 45),
-                            child: Text(
-                              "Kullanım Koşulları",
+                              "Hesabı Sil",
                               style: TextStyle(
                                   fontSize: sw / 20, color: Colors.black),
                             ),

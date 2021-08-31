@@ -1,4 +1,4 @@
-import 'package:bonybom_app/pages/auth/Profile.dart';
+import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/recorded.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +52,8 @@ class _NotificationPageState extends State<NotificationPage> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => Profile()));
+                                              builder: (context) =>
+                                                  userPage()));
                                     },
                                     icon: Icon(
                                       Icons.home_outlined,
@@ -71,7 +72,8 @@ class _NotificationPageState extends State<NotificationPage> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => Profile()));
+                                              builder: (context) =>
+                                                  userPage()));
                                     },
                                     icon: Icon(
                                       Icons.person_outline,
