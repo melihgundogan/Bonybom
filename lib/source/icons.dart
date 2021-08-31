@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class icons {
+class SvgIcn {
   Widget home =
       SvgPicture.asset('assets/icons/Home.svg', semanticsLabel: 'Home');
   Widget category =
@@ -14,4 +14,6 @@ class icons {
       SvgPicture.asset('assets/icons/email.svg', semanticsLabel: 'Email');
   Widget heart =
       SvgPicture.asset('assets/icons/heart.svg', semanticsLabel: 'Heart');
+  Widget profile =
+      SvgPicture.asset('assets/icons/profile.svg', semanticsLabel: 'Heart');
 }
