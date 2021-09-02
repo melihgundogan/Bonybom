@@ -12,8 +12,7 @@ class CategoryNotifier with ChangeNotifier {
 
   getCategories() async {
     _loading = true;
-    var url = Uri.parse(
-        "https://bonybom.com/api/category/all");
+    var url = Uri.parse("https://bonybom.com/api/category/all");
     var response = await http.get(url);
 
     List result = json.decode(response.body);
@@ -23,5 +22,16 @@ class CategoryNotifier with ChangeNotifier {
     _loading = false;
 
     notifyListeners();
+  }
+
+    sizeOzel(String id) async{
+    _loading = true;
+    var url = Uri.parse("https://bonybom.com/api/category/${id}");
+    var response = await http.get(url);
+    List result = json.decode(response.body);
+    _categories = result.map((e) => CategoryModel.fromJson(e)).toList();
+    _loading = false;
+    notifyListeners();
+    
   }
 }

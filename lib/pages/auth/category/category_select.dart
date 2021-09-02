@@ -142,6 +142,7 @@ class CategoryWidget extends StatelessWidget {
 
   final Size s;
   final CategoryModel item;
+  final String baseUrl = "https://bonybom.com/admin/";
 
   @override
   Widget build(BuildContext context) {
@@ -178,6 +179,14 @@ class CategoryWidget extends StatelessWidget {
                     left: ww(context, 10),
                     right: ww(context, 10),
                     bottom: ww(context, 10),
+                  ),child: Text(
+                    item.title_tr,
+                    style: TextStyle(
+                      fontSize: hh(context, 11),
+                      fontWeight: FontWeight.w600,
+                      color: Clr.white,
+                      letterSpacing: 1,
+                    ),
                   ),
                 ),
               ),
@@ -185,9 +194,11 @@ class CategoryWidget extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage(
-                item.image,
-              ),
+              image: item.image == null
+                  ? NetworkImage("")
+                  : NetworkImage(
+                      baseUrl+item.image,
+                    ),
               fit: BoxFit.cover,
             ),
           ),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 
 class Favorites_modul {
   final String favorite_text;
