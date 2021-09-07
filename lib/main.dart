@@ -1,3 +1,4 @@
+import 'package:bonybom_app/pages/auth/diamond.dart';
 import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
 import 'package:bonybom_app/pages/auth/auth.dart';
 import 'package:bonybom_app/pages/auth/info.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Poppins",
         primarySwatch: Colors.blue,
       ),
-      home: Info(),
+      home: AddDiamond(),
     );
   }
 }
