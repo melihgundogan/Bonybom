@@ -1,6 +1,7 @@
 import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/recorded.dart';
+import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +12,7 @@ class NotificationPage extends StatefulWidget {
 }
 
 class _NotificationPageState extends State<NotificationPage> {
+  var _svgIcon = new SvgIcn();
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -47,18 +49,12 @@ class _NotificationPageState extends State<NotificationPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                IconButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                
+                                    GestureDetector(onTap: () {Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  userPage()));
-                                    },
-                                    icon: Icon(
-                                      Icons.home_outlined,
-                                      size: s.width / 10,
-                                    )),
+                                                  userPage()));}, child: _svgIcon.home),
                                 GestureDetector(
                                   onTap: () {},
                                   child: Image.asset(
@@ -67,18 +63,11 @@ class _NotificationPageState extends State<NotificationPage> {
                                     height: s.width / 12,
                                   ),
                                 ),
-                                IconButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                GestureDetector(onTap: () {Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  userPage()));
-                                    },
-                                    icon: Icon(
-                                      Icons.person_outline,
-                                      size: s.width / 10,
-                                    )),
+                                                  userPage()));}, child: _svgIcon.profile),
                               ],
                             ),
                           ),
