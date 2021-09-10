@@ -48,7 +48,6 @@ flutter:
     - assets/images/kategori/
     - assets/icons/
     - assets/images/profile/
-    - assets/datasets/countries.json
 
   fonts:
     - family: Gilroy
