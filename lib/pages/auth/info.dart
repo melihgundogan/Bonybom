@@ -1,3 +1,4 @@
+import 'package:bonybom_app/pages/auth/info_pages/countries.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
@@ -109,10 +110,16 @@ class _InfoState extends State<Info> {
                     Padding(
                       padding: EdgeInsets.only(top: s.width / 15),
                       child: authButton(
+                        
                         context,
                         s,
+                        onPressed: () {Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Countries()));},
                         bgColor: Clr.darkestGray.withOpacity(0.7),
                         child: Row(
+                          
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(
