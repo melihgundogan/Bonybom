@@ -2,6 +2,7 @@ import 'package:bonybom_app/models/category_model.dart';
 import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/pages/auth/other_categorys.dart';
 import 'package:bonybom_app/pages/auth/to_you.dart';
+import 'package:bonybom_app/source/icons.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/foundation.dart';
@@ -48,6 +49,7 @@ class _SpecialCategoryState extends State<SpecialCategory> {
   }
 
   final String baseUrl = "https://bonybom.com/admin/";
+  var _svgIcon = new SvgIcn();
 
   @override
   Widget build(BuildContext context) {
@@ -68,17 +70,11 @@ class _SpecialCategoryState extends State<SpecialCategory> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.push(
+                    GestureDetector(onTap: () { Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NotificationPage()));
-                        },
-                        icon: Icon(
-                          Icons.home_outlined,
-                          size: sw / 10,
-                        )),
+                                  builder: (context) => NotificationPage()));}, 
+                                                  child: _svgIcon.home),
                     GestureDetector(
                       onTap: () {},
                       child: Image.asset(
@@ -87,17 +83,18 @@ class _SpecialCategoryState extends State<SpecialCategory> {
                         height: sw / 12,
                       ),
                     ),
-                    IconButton(
-                        onPressed: () {
+                    
+                        GestureDetector(
+                          onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => NotificationPage()));
-                        },
-                        icon: Icon(
-                          Icons.person_outline,
-                          size: sw / 10,
-                        )),
+                          },         
+                          child: _svgIcon.profile),
+
+
+
                   ],
                 ),
               ),
