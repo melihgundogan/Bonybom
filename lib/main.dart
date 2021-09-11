@@ -1,3 +1,5 @@
+import 'package:bonybom_app/pages/auth/home_page.dart';
+import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
 import 'package:bonybom_app/pages/auth/auth.dart';
 import 'package:bonybom_app/pages/auth/info.dart';
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Poppins",
         primarySwatch: Colors.blue,
       ),
-      home: Info(),
+      home: FavoritesPage(),
     );
   }
 }
