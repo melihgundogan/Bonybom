@@ -2,6 +2,7 @@ import 'package:bonybom_app/models/category_model.dart';
 import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/pages/auth/other_categorys.dart';
 import 'package:bonybom_app/pages/auth/to_you.dart';
+import 'package:bonybom_app/source/icons.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/foundation.dart';
@@ -48,6 +49,7 @@ class _SpecialCategoryState extends State<SpecialCategory> {
   }
 
   final String baseUrl = "https://bonybom.com/admin/";
+  var _svgIcon = new SvgIcn();
 
   @override
   Widget build(BuildContext context) {
@@ -62,132 +64,125 @@ class _SpecialCategoryState extends State<SpecialCategory> {
           padding: EdgeInsets.only(top: sw / 12, bottom: sw / 40),
           child: Column(
             children: [
-              
-              // Padding(
-              //   padding: EdgeInsets.only(right: sw / 15, left: sw / 20),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     crossAxisAlignment: CrossAxisAlignment.center,
-              //     children: [
-              //       IconButton(
-              //           onPressed: () {
-              //             Navigator.push(
-              //                 context,
-              //                 MaterialPageRoute(
-              //                     builder: (context) => NotificationPage()));
-              //           },
-              //           icon: Icon(
-              //             Icons.home_outlined,
-              //             size: sw / 10,
-              //           )),
-              //       GestureDetector(
-              //         onTap: () {},
-              //         child: Image.asset(
-              //           "assets/icons/Logo.png",
-              //           width: sw / 12,
-              //           height: sw / 12,
-              //         ),
-              //       ),
-              //       IconButton(
-              //           onPressed: () {
-              //             Navigator.push(
-              //                 context,
-              //                 MaterialPageRoute(
-              //                     builder: (context) => NotificationPage()));
-              //           },
-              //           icon: Icon(
-              //             Icons.person_outline,
-              //             size: sw / 10,
-              //           )),
-              //     ],
-              //   ),
-              // ),
-              // MaterialButton(
-              //   onPressed: () {
-              //     print("basıldı");
-              //   },
-              //   padding: EdgeInsets.only(left: 30, top: 20),
-              //   child: Row(
-              //     children: [
-              //       Stack(
-              //         children: [
-              //           Container(
-              //             width: (s.width - ww(context, 92)) / 1.9,
-              //             height: ((s.width - ww(context, 92)) / 3) * 4 / 3,
-              //             decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(21),
-              //               image: DecorationImage(
-              //                   image: AssetImage(
-              //                       "assets/images/kategori/dans.jpg"),
-              //                   fit: BoxFit.cover),
-              //             ),
-              //           ),
-              //           Positioned(
-              //             bottom: 0,
-              //             left: 0,
-              //             child: Container(
-              //               width: (s.width - ww(context, 92)) / 3,
-              //               padding: EdgeInsets.only(
-              //                 left: ww(context, 10),
-              //                 right: ww(context, 10),
-              //                 bottom: ww(context, 10),
-              //               ),
-              //               child: Text(
-              //                 "Bana Özel",
-              //                 style: TextStyle(
-              //                   fontSize: hh(context, 11),
-              //                   fontWeight: FontWeight.w600,
-              //                   color: Clr.white,
-              //                   letterSpacing: 1,
-              //                 ),
-              //               ),
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //       SizedBox(
-              //         width: 20,
-              //       ),
-              //       Stack(
-              //         children: [
-              //           Container(
-              //             width: (s.width - ww(context, 92)) / 1.9,
-              //             height: ((s.width - ww(context, 92)) / 3) * 4 / 3,
-              //             decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(21),
-              //               image: DecorationImage(
-              //                   image: AssetImage(
-              //                       "assets/images/kategori/kitap.jpg"),
-              //                   fit: BoxFit.cover),
-              //             ),
-              //           ),
-              //           Positioned(
-              //             bottom: 0,
-              //             left: 0,
-              //             child: Container(
-              //               width: (s.width - ww(context, 92)) / 3,
-              //               padding: EdgeInsets.only(
-              //                 left: ww(context, 10),
-              //                 right: ww(context, 10),
-              //                 bottom: ww(context, 10),
-              //               ),
-              //               child: Text(
-              //                 "Haftanın Enleri",
-              //                 style: TextStyle(
-              //                   fontSize: hh(context, 11),
-              //                   fontWeight: FontWeight.w600,
-              //                   color: Clr.white,
-              //                   letterSpacing: 1,
-              //                 ),
-              //               ),
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              ToYouPage(),
+              Padding(
+                padding: EdgeInsets.only(right: sw / 15, left: sw / 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(onTap: () { Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => NotificationPage()));}, 
+                                                  child: _svgIcon.home),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Image.asset(
+                        "assets/icons/Logo.png",
+                        width: sw / 12,
+                        height: sw / 12,
+                      ),
+                    ),
+                    
+                        GestureDetector(
+                          onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => NotificationPage()));
+                          },         
+                          child: _svgIcon.profile),
+
+
+
+                  ],
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  print("basıldı");
+                },
+                padding: EdgeInsets.only(left: 30, top: 20),
+                child: Row(
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          width: (s.width - ww(context, 92)) / 1.9,
+                          height: ((s.width - ww(context, 92)) / 3) * 4 / 3,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(21),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/kategori/dans.jpg"),
+                                fit: BoxFit.cover),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          child: Container(
+                            width: (s.width - ww(context, 92)) / 3,
+                            padding: EdgeInsets.only(
+                              left: ww(context, 10),
+                              right: ww(context, 10),
+                              bottom: ww(context, 10),
+                            ),
+                            child: Text(
+                              "Bana Özel",
+                              style: TextStyle(
+                                fontSize: hh(context, 11),
+                                fontWeight: FontWeight.w600,
+                                color: Clr.white,
+                                letterSpacing: 1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Stack(
+                      children: [
+                        Container(
+                          width: (s.width - ww(context, 92)) / 1.9,
+                          height: ((s.width - ww(context, 92)) / 3) * 4 / 3,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(21),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/kategori/kitap.jpg"),
+                                fit: BoxFit.cover),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          child: Container(
+                            width: (s.width - ww(context, 92)) / 3,
+                            padding: EdgeInsets.only(
+                              left: ww(context, 10),
+                              right: ww(context, 10),
+                              bottom: ww(context, 10),
+                            ),
+                            child: Text(
+                              "Haftanın Enleri",
+                              style: TextStyle(
+                                fontSize: hh(context, 11),
+                                fontWeight: FontWeight.w600,
+                                color: Clr.white,
+                                letterSpacing: 1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               Container(
                 margin: EdgeInsets.only(top: 1),
                 padding: const EdgeInsets.only(right: 195),

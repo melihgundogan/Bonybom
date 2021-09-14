@@ -16,4 +16,14 @@ class SvgIcn {
       SvgPicture.asset('assets/icons/heart.svg', semanticsLabel: 'Heart');
   Widget profile =
       SvgPicture.asset('assets/icons/profile.svg', semanticsLabel: 'Heart');
+  Widget file =
+      SvgPicture.asset('assets/icons/file.svg', semanticsLabel: 'file');
+  Widget dislike =
+      SvgPicture.asset('assets/icons/Dislike.svg', semanticsLabel: 'dislike');
+  Widget bookmark =
+      SvgPicture.asset('assets/icons/Bookmark.svg', semanticsLabel: 'bookmark');
+  Widget like =
+      SvgPicture.asset('assets/icons/Like.svg', semanticsLabel: 'like');
+  Widget diamond =
+      SvgPicture.asset('assets/icons/diamond.svg', semanticsLabel: "diamond");                    
 }
