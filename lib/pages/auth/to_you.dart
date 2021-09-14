@@ -11,7 +11,6 @@ class ToYouPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = MediaQuery.of(context).size;
     final _cat = Provider.of<CategoryNotifier>(context, listen: false);
-    _cat.sizeOzel("1");
     return Consumer(
         builder: (_, CategoryNotifier categoryState, Widget? child) {
       if (categoryState.loading) {
@@ -19,10 +18,9 @@ class ToYouPage extends StatelessWidget {
           child: CircularProgressIndicator(),
         );
       } else {
+        print(categoryState.sizeOzel("1"));
         return Container(
-       
           child: Container(
-            
             padding: EdgeInsets.symmetric(
               horizontal: ww(context, 30),
             ),
