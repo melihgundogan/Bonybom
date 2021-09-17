@@ -24,6 +24,9 @@ class SvgIcn {
       SvgPicture.asset('assets/icons/Bookmark.svg', semanticsLabel: 'bookmark');
   Widget like =
       SvgPicture.asset('assets/icons/Like.svg', semanticsLabel: 'like');
-  Widget diamond =
-      SvgPicture.asset('assets/icons/diamond.svg', semanticsLabel: "diamond");                    
+  Widget diamond = SvgPicture.asset(
+    'assets/icons/diamond.svg',
+    semanticsLabel: "diamond",
+   
+  );
 }

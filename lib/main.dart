@@ -1,4 +1,3 @@
-
 import 'package:bonybom_app/pages/auth/home_page.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/diamond.dart';
@@ -42,7 +41,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Poppins",
         primarySwatch: Colors.blue,
       ),
-      home: FavoritesPage(),
+      home: HomePage(),
     );
   }
 }

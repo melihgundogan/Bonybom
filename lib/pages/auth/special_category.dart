@@ -1,7 +1,9 @@
 import 'package:bonybom_app/models/category_model.dart';
+import 'package:bonybom_app/pages/auth/home_page.dart';
 import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/pages/auth/other_categorys.dart';
 import 'package:bonybom_app/pages/auth/to_you.dart';
+import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
@@ -70,31 +72,35 @@ class _SpecialCategoryState extends State<SpecialCategory> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    GestureDetector(onTap: () { Navigator.push(
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NotificationPage()));}, 
-                                                  child: _svgIcon.home),
+                                  builder: (context) => SpecialCategory()));
+                        },
+                        child: _svgIcon.home),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      },
                       child: Image.asset(
                         "assets/icons/Logo.png",
                         width: sw / 12,
                         height: sw / 12,
                       ),
                     ),
-                    
-                        GestureDetector(
-                          onTap: () {
+                    GestureDetector(
+                        onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NotificationPage()));
-                          },         
-                          child: _svgIcon.profile),
-
-
-
+                                  builder: (context) => userPage()));
+                        },
+                        child: _svgIcon.profile),
                   ],
                 ),
               ),

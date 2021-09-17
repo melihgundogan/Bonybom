@@ -1,5 +1,7 @@
+import 'package:bonybom_app/pages/auth/home_page.dart';
 import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/pages/auth/special_category.dart';
+import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 
@@ -31,13 +33,18 @@ class _editProfileState extends State<editProfile> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  GestureDetector(onTap: () {}, child: _svgIcon.home),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SpecialCategory()));
+                      },
+                      child: _svgIcon.home),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SpecialCategory()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     child: Image.asset(
                       "assets/icons/Logo.png",
@@ -45,7 +52,14 @@ class _editProfileState extends State<editProfile> {
                       height: sw / 12,
                     ),
                   ),
-                  GestureDetector(onTap: () {}, child: _svgIcon.profile),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => userPage()));
+                      },
+                      child: _svgIcon.profile),
                 ],
               ),
             ),

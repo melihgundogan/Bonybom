@@ -1,3 +1,4 @@
+import 'package:bonybom_app/pages/auth/home_page.dart';
 import 'package:bonybom_app/pages/auth/userpages/editprofile.dart';
 import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/pages/auth/special_category.dart';
@@ -32,21 +33,33 @@ class _userPageState extends State<userPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  GestureDetector(onTap: () {}, child: _svgIcon.home),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SpecialCategory()));
+                      },
+                      child: _svgIcon.home),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SpecialCategory()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     child: Image.asset(
                       "assets/icons/Logo.png",
-                      width: sw / 12,
-                      height: sw / 12,
+                      width: sw / 11,
+                      height: sw / 11,
                     ),
                   ),
-                  GestureDetector(onTap: () {}, child: _svgIcon.profile),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => userPage()));
+                      },
+                      child: _svgIcon.profile),
                 ],
               ),
             ),
