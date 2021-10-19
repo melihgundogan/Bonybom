@@ -94,7 +94,6 @@ class _HomePageState extends State<HomePage> {
                 });
               },
             ),
-<<<<<<< HEAD
             Container(
               padding: EdgeInsets.only(
                   top: s.height / 14, left: s.width / 19, right: s.width / 19),
@@ -141,47 +140,56 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-=======
-            Padding(
-              padding: EdgeInsets.only(top: s.width / 8),
-              child: Container(
-                height: s.width / 6,
-                width: s.width / 1.18,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Padding(
-                  padding:
-                      EdgeInsets.only(right: s.width / 15, left: s.width / 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      GestureDetector(onTap: () {}, child: _svgIcon.file),
-                      VerticalDivider(
-                        color: Colors.black,
-                        width: 3,
+                      Padding(
+                        padding: EdgeInsets.only(top: s.width / 8),
+                        child: Container(
+                          height: s.width / 6,
+                          width: s.width / 1.18,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                right: s.width / 15, left: s.width / 15),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                    onTap: () {}, child: _svgIcon.file),
+                                VerticalDivider(
+                                  color: Colors.black,
+                                  width: 3,
+                                ),
+                                GestureDetector(
+                                    onTap: () {}, child: _svgIcon.dislike),
+                                VerticalDivider(
+                                  color: Colors.black,
+                                  width: 3,
+                                ),
+                                GestureDetector(
+                                    onTap: () {}, child: _svgIcon.bookmark),
+                                VerticalDivider(
+                                  color: Colors.black,
+                                  width: 3,
+                                ),
+                                GestureDetector(
+                                    onTap: () {}, child: _svgIcon.like),
+                                VerticalDivider(
+                                  color: Colors.black,
+                                  width: 3,
+                                ),
+                                GestureDetector(
+                                    onTap: () {},
+                                    child: SizedBox(
+                                        height: s.width / 13,
+                                        child: _svgIcon.diamond)),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
-                      GestureDetector(onTap: () {}, child: _svgIcon.dislike),
-                      VerticalDivider(
-                        color: Colors.black,
-                        width: 3,
-                      ),
-                      GestureDetector(onTap: () {}, child: _svgIcon.bookmark),
-                      VerticalDivider(
-                        color: Colors.black,
-                        width: 3,
-                      ),
-                      GestureDetector(onTap: () {}, child: _svgIcon.like),
-                      VerticalDivider(
-                        color: Colors.black,
-                        width: 3,
-                      ),
-                      GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                              height: s.width / 13, child: _svgIcon.diamond)),
->>>>>>> 7a99591d3058a5190abe63e25e04889297e12b5b
                     ],
                   ),
                 ),
