@@ -1,4 +1,5 @@
 import 'package:bonybom_app/pages/auth/home_page.dart';
+import 'package:bonybom_app/pages/auth/info_pages/country_choose.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/diamond.dart';
 import 'package:bonybom_app/pages/auth/moreoptions.dart';
