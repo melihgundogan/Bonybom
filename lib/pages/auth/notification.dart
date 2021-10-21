@@ -56,18 +56,27 @@ class _NotificationPageState extends State<NotificationPage> {
                                               builder: (context) =>
                                                   HomePage()));}, child: _svgIcon.home),
                                 GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => HomePage()));
+                                  },
                                   child: Image.asset(
                                     "assets/icons/Logo.png",
                                     width: s.width / 12,
                                     height: s.width / 12,
                                   ),
                                 ),
-                                GestureDetector(onTap: () {Navigator.push(
+                                GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  userPage()));}, child: _svgIcon.profile),
+                                                  userPage()));
+                                    },
+                                    child: _svgIcon.profile),
                               ],
                             ),
                           ),
