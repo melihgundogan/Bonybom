@@ -1,10 +1,12 @@
-
-
+import 'package:bonybom_app/pages/auth/dark_light.dart';
 import 'package:bonybom_app/pages/auth/home_page.dart';
 import 'package:bonybom_app/pages/auth/info_pages/country_choose.dart';
+import 'package:bonybom_app/pages/auth/notification.dart';
 import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
 import 'package:bonybom_app/pages/auth/diamond.dart';
 import 'package:bonybom_app/pages/auth/moreoptions.dart';
+import 'package:bonybom_app/pages/auth/special_category.dart';
+import 'package:bonybom_app/pages/auth/userpages/editprofile.dart';
 
 import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
 import 'package:bonybom_app/pages/auth/auth.dart';
@@ -40,11 +42,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "Poppins",
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(),
+      themeMode: ThemeMode.system,
+      theme: MyThemes.lightTheme,                                                   
+      darkTheme: MyThemes.darkTheme,
+      home: MoreOptions(),
     );
   }
 }

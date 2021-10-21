@@ -21,7 +21,7 @@ class _userPageState extends State<userPage> {
     var sw = screenSize.width;
     var sh = screenSize.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(top: sw / 12, bottom: sw / 40),
         child: Column(
@@ -98,7 +98,7 @@ class _userPageState extends State<userPage> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "AYARLAR",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
                       ),
                     ),
                   ),
@@ -116,20 +116,20 @@ class _userPageState extends State<userPage> {
                         children: [
                           Icon(
                             Icons.notifications_outlined,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Profili Düzenle",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                         ],
                       ),
@@ -144,20 +144,20 @@ class _userPageState extends State<userPage> {
                         children: [
                           Icon(
                             Icons.notifications_outlined,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Bildirimler",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                         ],
                       ),
@@ -172,20 +172,20 @@ class _userPageState extends State<userPage> {
                         children: [
                           Icon(
                             Icons.category_outlined,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Kategorileri Düzenle",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                         ],
                       ),
@@ -198,14 +198,14 @@ class _userPageState extends State<userPage> {
                       children: [
                         Icon(
                           Icons.dark_mode_outlined,
-                          color: Colors.black,
+                          //color: Colors.white,
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: sw / 45),
                           child: Text(
                             "Karanlık Mod",
                             style: TextStyle(
-                                fontSize: sw / 20, color: Colors.black),
+                                fontSize: sw / 20),
                           ),
                         ),
                         Spacer(),
@@ -231,7 +231,7 @@ class _userPageState extends State<userPage> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "BONYBOM",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
                       ),
                     ),
                   ),
@@ -251,7 +251,7 @@ class _userPageState extends State<userPage> {
                             child: Text(
                               "Bonybom'u Arkadaşlarınla Paylaş",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                         ],
@@ -267,20 +267,20 @@ class _userPageState extends State<userPage> {
                         children: [
                           Icon(
                             Icons.email_outlined,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Bize Ulaşın",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                         ],
                       ),
@@ -295,7 +295,7 @@ class _userPageState extends State<userPage> {
                         children: [
                           ImageIcon(
                             AssetImage("assets/icons/Logo.png"),
-                            color: Colors.black,
+                            //color: Colors.black,
                             size: sw / 18,
                           ),
                           Padding(
@@ -303,13 +303,13 @@ class _userPageState extends State<userPage> {
                             child: Text(
                               "Bonybom Hakkında",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                         ],
                       ),
@@ -324,20 +324,20 @@ class _userPageState extends State<userPage> {
                         children: [
                           Icon(
                             Icons.privacy_tip_outlined,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Gizlilik Politikası",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                         ],
                       ),
@@ -352,20 +352,20 @@ class _userPageState extends State<userPage> {
                         children: [
                           Icon(
                             Icons.description_outlined,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Kullanım Koşulları",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            //color: Colors.black,
                           ),
                         ],
                       ),

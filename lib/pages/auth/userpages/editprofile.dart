@@ -20,7 +20,7 @@ class _editProfileState extends State<editProfile> {
     var sw = screenSize.width;
     var sh = screenSize.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(top: sw / 12, bottom: sw / 40),
         child: Column(
@@ -97,7 +97,7 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "HESABIM",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
                       ),
                     ),
                   ),
@@ -118,13 +118,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Ad Soyad",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                      
                           ),
                         ],
                       ),
@@ -142,13 +142,12 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Doğum Tarihi",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
                           ),
                         ],
                       ),
@@ -166,13 +165,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Cep Telefon Numarası",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            
                           ),
                         ],
                       ),
@@ -195,13 +194,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "E-posta",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            
                           ),
                         ],
                       ),
@@ -224,13 +223,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Şifre",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            
                           ),
                         ],
                       ),
@@ -253,13 +252,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Konum",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            
                           ),
                         ],
                       ),
@@ -272,7 +271,7 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "HESAP İŞLEMLERİ",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
                       ),
                     ),
                   ),
@@ -288,7 +287,7 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Önbelleği Temizle",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                         ],
@@ -307,13 +306,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Bize Ulaşın",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            
                           ),
                         ],
                       ),
@@ -331,13 +330,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Oturumu Kapat",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                            
                           ),
                         ],
                       ),
@@ -355,13 +354,13 @@ class _editProfileState extends State<editProfile> {
                             child: Text(
                               "Hesabı Sil",
                               style: TextStyle(
-                                  fontSize: sw / 20, color: Colors.black),
+                                  fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            color: Colors.black,
+                           
                           ),
                         ],
                       ),

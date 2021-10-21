@@ -1,3 +1,4 @@
+import 'package:bonybom_app/pages/auth/auth.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -88,7 +89,13 @@ class Opening extends StatelessWidget {
                 width: s.width,
                 padding: EdgeInsets.symmetric(horizontal: ww(context, 32)),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  Auth())
+                  );
+                  },
                   height: hh(context, 72),
                   color: Clr.mainBlue,
                   shape: RoundedRectangleBorder(

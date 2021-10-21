@@ -50,15 +50,17 @@ class _SpecialCategoryState extends State<SpecialCategory> {
 
   final String baseUrl = "https://bonybom.com/admin/";
   var _svgIcon = new SvgIcn();
-
   @override
   Widget build(BuildContext context) {
+     /*final text = MediaQuery.of(context).platformBrightness == Brightness.dark
+      ? 'DarkTheme'
+      : 'LightTheme';*/
     final _cat = Provider.of<CategoryNotifier>(context, listen: false);
     final s = MediaQuery.of(context).size;
     var sw = s.width;
     var sh = s.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(top: sw / 12, bottom: sw / 40),
@@ -70,11 +72,14 @@ class _SpecialCategoryState extends State<SpecialCategory> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    GestureDetector(onTap: () { Navigator.push(
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NotificationPage()));}, 
-                                                  child: _svgIcon.home),
+                                  builder: (context) => NotificationPage()));
+                        },
+                        child: _svgIcon.home),
                     GestureDetector(
                       onTap: () {},
                       child: Image.asset(
@@ -83,18 +88,14 @@ class _SpecialCategoryState extends State<SpecialCategory> {
                         height: sw / 12,
                       ),
                     ),
-                    
-                        GestureDetector(
-                          onTap: () {
+                    GestureDetector(
+                        onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => NotificationPage()));
-                          },         
-                          child: _svgIcon.profile),
-
-
-
+                        },
+                        child: _svgIcon.profile),
                   ],
                 ),
               ),
