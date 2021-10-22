@@ -1,7 +1,7 @@
-import 'package:bonybom_app/pages/auth/home_page.dart';
-import 'package:bonybom_app/pages/auth/notification.dart';
-import 'package:bonybom_app/pages/auth/special_category.dart';
-import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
+import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/notification/notification.dart';
+import 'package:bonybom_app/screens/category/special_category.dart';
+import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +13,10 @@ class editProfile extends StatefulWidget {
 }
 
 class _editProfileState extends State<editProfile> {
+  String initValue = "Select your Birth Date";
+  bool isDateSelected = false;
+  late DateTime birthDate; // instance of DateTime
+  late String birthDateInString;
   var username = "Ali Pek Yılmaz";
   var userMail = "AliPekYılmaz@gmail.com";
   var _svgIcon = new SvgIcn();
@@ -20,7 +24,6 @@ class _editProfileState extends State<editProfile> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     var sw = screenSize.width;
-    var sh = screenSize.height;
     return Scaffold(
       //backgroundColor: Colors.white,
       body: Padding(
@@ -38,19 +41,13 @@ class _editProfileState extends State<editProfile> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SpecialCategory()));
+                                builder: (context) => HomePage()));
                       },
                       child: _svgIcon.home),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
-                    },
-                    child: Image.asset(
-                      "assets/icons/Logo.png",
-                      width: sw / 12,
-                      height: sw / 12,
-                    ),
+                  Image.asset(
+                    "assets/icons/Logo.png",
+                    width: sw / 12,
+                    height: sw / 12,
                   ),
                   GestureDetector(
                       onTap: () {
@@ -111,17 +108,30 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "HESABIM",
-                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => editProfile()));
-                    },
+                    onTap: () => showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Ad Soyad'),
+                        content: const TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Ad Soyad',
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Text("lkjh"),
+                            child: const Text('Kaydet'),
+                          ),
+                        ],
+                      ),
+                    ),
                     child: Container(
                       height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
@@ -131,21 +141,33 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Ad Soyad",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                      
                           ),
                         ],
                       ),
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () async {
+                      final datePick = await showDatePicker(
+                          context: context,
+                          initialDate: new DateTime.now(),
+                          firstDate: new DateTime(1900),
+                          lastDate: new DateTime(2100));
+                      if (datePick != null && datePick != birthDate) {
+                        setState(() {
+                          birthDate = datePick;
+                          isDateSelected = true;
+                          birthDateInString =
+                              "${birthDate.month}/${birthDate.day}/${birthDate.year}";
+                        });
+                      }
+                    },
                     child: Container(
                       height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
@@ -155,8 +177,7 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Doğum Tarihi",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
@@ -168,7 +189,24 @@ class _editProfileState extends State<editProfile> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () => showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Tel.No. '),
+                        content: const TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Tel.No.',
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Text("lkjh"),
+                            child: const Text('Kaydet'),
+                          ),
+                        ],
+                      ),
+                    ),
                     child: Container(
                       height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
@@ -178,26 +216,36 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Cep Telefon Numarası",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            
                           ),
                         ],
                       ),
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => editProfile()));
-                    },
+                    onTap: () => showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('E-posta '),
+                        content: const TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'E-posta',
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Text("lkjh"),
+                            child: const Text('Kaydet'),
+                          ),
+                        ],
+                      ),
+                    ),
                     child: Container(
                       height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
@@ -207,26 +255,37 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "E-posta",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            
                           ),
                         ],
                       ),
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => editProfile()));
-                    },
+                    onTap: () => showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Şifre '),
+                        content: const TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Şifre',
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Text("lkjh"),
+                            child: const Text('Kaydet'),
+                          ),
+                        ],
+                      ),
+                    ),
                     child: Container(
                       height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
@@ -236,14 +295,12 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Şifre",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            
                           ),
                         ],
                       ),
@@ -265,14 +322,12 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Konum",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            
                           ),
                         ],
                       ),
@@ -285,7 +340,8 @@ class _editProfileState extends State<editProfile> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "HESAP İŞLEMLERİ",
-                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                   ),
@@ -300,8 +356,7 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Önbelleği Temizle",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                         ],
@@ -319,14 +374,12 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Bize Ulaşın",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            
                           ),
                         ],
                       ),
@@ -343,14 +396,12 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Oturumu Kapat",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                            
                           ),
                         ],
                       ),
@@ -367,14 +418,12 @@ class _editProfileState extends State<editProfile> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Hesabı Sil",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
                           Icon(
                             Icons.keyboard_arrow_right,
-                           
                           ),
                         ],
                       ),

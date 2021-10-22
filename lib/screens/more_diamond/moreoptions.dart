@@ -1,6 +1,7 @@
-import 'package:bonybom_app/pages/auth/diamond.dart';
-import 'package:bonybom_app/pages/auth/special_category.dart';
-import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
+import 'package:bonybom_app/screens/more_diamond/diamond.dart';
+import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/category/special_category.dart';
+import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 
@@ -43,16 +44,13 @@ class _MoreOptionsState extends State<MoreOptions> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => userPage()));
+                                    builder: (context) => HomePage()));
                           },
                           child: _svgIcon.home),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Image.asset(
-                          "assets/icons/Logo.png",
-                          width: sw / 12,
-                          height: sw / 12,
-                        ),
+                      Image.asset(
+                        "assets/icons/Logo.png",
+                        width: sw / 12,
+                        height: sw / 12,
                       ),
                       GestureDetector(
                           onTap: () {
@@ -76,7 +74,7 @@ class _MoreOptionsState extends State<MoreOptions> {
                 ),
               ),
               GestureDetector(
-                onTap: (){},
+                onTap: () {},
                 child: Container(
                   margin: EdgeInsets.only(top: sw / 8, bottom: sw / 15),
                   decoration: BoxDecoration(
@@ -93,7 +91,8 @@ class _MoreOptionsState extends State<MoreOptions> {
                             Text(
                               "ARKADAŞLARINI DAVET ET",
                               style: TextStyle(
-                                  fontSize: sw / 26, fontWeight: FontWeight.w600),
+                                  fontSize: sw / 26,
+                                  fontWeight: FontWeight.w600),
                             ),
                             Text("Bağlantını paylaş ve ek +50 elmas kazan.",
                                 style: TextStyle(fontSize: sw / 35)),
@@ -105,10 +104,10 @@ class _MoreOptionsState extends State<MoreOptions> {
                 ),
               ),
               GestureDetector(
-                onTap: (){Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AddDiamond()));},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AddDiamond()));
+                },
                 child: Container(
                   margin: EdgeInsets.only(bottom: sw / 15),
                   decoration: BoxDecoration(
@@ -125,7 +124,8 @@ class _MoreOptionsState extends State<MoreOptions> {
                             Text(
                               "ELMAS SATIN AL",
                               style: TextStyle(
-                                  fontSize: sw / 26, fontWeight: FontWeight.w600),
+                                  fontSize: sw / 26,
+                                  fontWeight: FontWeight.w600),
                             ),
                             Text("Elmas paket satın al",
                                 style: TextStyle(fontSize: sw / 35)),
@@ -137,7 +137,7 @@ class _MoreOptionsState extends State<MoreOptions> {
                 ),
               ),
               GestureDetector(
-                onTap: (){},
+                onTap: () {},
                 child: Container(
                   margin: EdgeInsets.only(bottom: sw / 15),
                   decoration: BoxDecoration(
@@ -154,7 +154,8 @@ class _MoreOptionsState extends State<MoreOptions> {
                             Text(
                               "VIDEO İZLEYİN",
                               style: TextStyle(
-                                  fontSize: sw / 26, fontWeight: FontWeight.w600),
+                                  fontSize: sw / 26,
+                                  fontWeight: FontWeight.w600),
                             ),
                             Text("50 elmas kazanmak için bir video izleyin",
                                 style: TextStyle(fontSize: sw / 35)),
@@ -166,7 +167,7 @@ class _MoreOptionsState extends State<MoreOptions> {
                 ),
               ),
               GestureDetector(
-                onTap: (){},
+                onTap: () {},
                 child: Container(
                   margin: EdgeInsets.only(bottom: sw / 15),
                   decoration: BoxDecoration(
@@ -183,7 +184,8 @@ class _MoreOptionsState extends State<MoreOptions> {
                             Text(
                               "PREMIUM'U DENE",
                               style: TextStyle(
-                                  fontSize: sw / 26, fontWeight: FontWeight.w600),
+                                  fontSize: sw / 26,
+                                  fontWeight: FontWeight.w600),
                             ),
                             Text("Her şeyin sana özel olduğu bir dünya",
                                 style: TextStyle(fontSize: sw / 35)),

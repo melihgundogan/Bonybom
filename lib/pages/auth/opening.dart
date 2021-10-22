@@ -1,4 +1,5 @@
 import 'package:bonybom_app/pages/auth/auth.dart';
+import 'package:bonybom_app/screens/home/home_page.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +52,8 @@ class Opening extends StatelessWidget {
                   ),
                 ),
               ),
-            ),           Positioned(
+            ),
+            Positioned(
               top: hh(context, 96),
               left: ww(context, 52),
               child: Column(
@@ -89,12 +91,9 @@ class Opening extends StatelessWidget {
                 width: s.width,
                 padding: EdgeInsets.symmetric(horizontal: ww(context, 32)),
                 child: MaterialButton(
-                  onPressed: () {Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Auth())
-                  );
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   height: hh(context, 72),
                   color: Clr.mainBlue,

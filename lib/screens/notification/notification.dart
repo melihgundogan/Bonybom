@@ -1,7 +1,7 @@
-import 'package:bonybom_app/pages/auth/home_page.dart';
-import 'package:bonybom_app/pages/auth/userpages/userpage.dart';
-import 'package:bonybom_app/pages/auth/notification_pages/favorites.dart';
-import 'package:bonybom_app/pages/auth/notification_pages/recorded.dart';
+import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/profile/userpage.dart';
+import 'package:bonybom_app/screens/notification/favorites.dart';
+import 'package:bonybom_app/screens/notification/recorded.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,10 +16,6 @@ class _NotificationPageState extends State<NotificationPage> {
   var _svgIcon = new SvgIcn();
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarBrightness: Brightness.dark,
-    ));
     final s = MediaQuery.of(context).size;
 
     return new MaterialApp(
@@ -50,23 +46,19 @@ class _NotificationPageState extends State<NotificationPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                    GestureDetector(onTap: () {Navigator.push(
+                                GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  HomePage()));}, child: _svgIcon.home),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => HomePage()));
-                                  },
-                                  child: Image.asset(
-                                    "assets/icons/Logo.png",
-                                    width: s.width / 12,
-                                    height: s.width / 12,
-                                  ),
+                                                  HomePage()));
+                                    },
+                                    child: _svgIcon.home),
+                                Image.asset(
+                                  "assets/icons/Logo.png",
+                                  width: s.width / 12,
+                                  height: s.width / 12,
                                 ),
                                 GestureDetector(
                                     onTap: () {

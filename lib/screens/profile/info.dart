@@ -1,4 +1,3 @@
-
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 
-import 'category/category_select.dart';
-import 'widgets.dart';
+import '../category/category_select.dart';
+import '../../pages/auth/widgets.dart';
 
 class Info extends StatefulWidget {
   const Info({Key? key}) : super(key: key);
@@ -110,13 +109,11 @@ class _InfoState extends State<Info> {
                     Padding(
                       padding: EdgeInsets.only(top: s.width / 15),
                       child: authButton(
-                        
                         context,
                         s,
                         onPressed: () {},
                         bgColor: Clr.darkestGray.withOpacity(0.7),
                         child: Row(
-                          
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(

@@ -1,6 +1,6 @@
 import 'package:bonybom_app/models/category_model.dart';
-import 'package:bonybom_app/pages/auth/info.dart';
-import 'package:bonybom_app/pages/auth/notification.dart';
+import 'package:bonybom_app/screens/profile/info.dart';
+import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets.dart';
+import '../../pages/auth/widgets.dart';
 
 class CategorySelect extends StatefulWidget {
   const CategorySelect({Key? key}) : super(key: key);
@@ -179,7 +179,8 @@ class CategoryWidget extends StatelessWidget {
                     left: ww(context, 10),
                     right: ww(context, 10),
                     bottom: ww(context, 10),
-                  ),child: Text(
+                  ),
+                  child: Text(
                     item.title_tr,
                     style: TextStyle(
                       fontSize: hh(context, 11),
@@ -197,7 +198,7 @@ class CategoryWidget extends StatelessWidget {
               image: item.image == null
                   ? NetworkImage("")
                   : NetworkImage(
-                      baseUrl+item.image,
+                      baseUrl + item.image,
                     ),
               fit: BoxFit.cover,
             ),

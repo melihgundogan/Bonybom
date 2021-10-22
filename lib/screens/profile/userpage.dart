@@ -1,7 +1,8 @@
-import 'package:bonybom_app/pages/auth/home_page.dart';
-import 'package:bonybom_app/pages/auth/userpages/editprofile.dart';
-import 'package:bonybom_app/pages/auth/notification.dart';
-import 'package:bonybom_app/pages/auth/special_category.dart';
+import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/category/other_categorys.dart';
+import 'package:bonybom_app/screens/profile/editprofile.dart';
+import 'package:bonybom_app/screens/notification/notification.dart';
+import 'package:bonybom_app/screens/category/special_category.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,7 +21,6 @@ class _userPageState extends State<userPage> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     var sw = screenSize.width;
-    var sh = screenSize.height;
     return Scaffold(
       //backgroundColor: Colors.white,
       body: Padding(
@@ -38,19 +38,13 @@ class _userPageState extends State<userPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SpecialCategory()));
+                                builder: (context) => HomePage()));
                       },
                       child: _svgIcon.home),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
-                    },
-                    child: Image.asset(
-                      "assets/icons/Logo.png",
-                      width: sw / 11,
-                      height: sw / 11,
-                    ),
+                  Image.asset(
+                    "assets/icons/Logo.png",
+                    width: sw / 11,
+                    height: sw / 11,
                   ),
                   GestureDetector(
                       onTap: () {
@@ -98,9 +92,6 @@ class _userPageState extends State<userPage> {
                 ],
               ),
             ),
-            //
-            //
-            //
             Expanded(
               child: ListView(
                 children: [
@@ -111,7 +102,8 @@ class _userPageState extends State<userPage> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "AYARLAR",
-                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                   ),
@@ -127,16 +119,12 @@ class _userPageState extends State<userPage> {
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.notifications_outlined,
-                            //color: Colors.black,
-                          ),
+                          _svgIcon.category,
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Profili Düzenle",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
@@ -149,22 +137,23 @@ class _userPageState extends State<userPage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NotificationPage()));
+                    },
                     child: Container(
                       height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.notifications_outlined,
-                            //color: Colors.black,
-                          ),
+                          _svgIcon.notification,
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Bildirimler",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
@@ -177,22 +166,23 @@ class _userPageState extends State<userPage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OtherCategoryPage()));
+                    },
                     child: Container(
                       height: sw / 7,
                       padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.category_outlined,
-                            //color: Colors.black,
-                          ),
+                          _svgIcon.category,
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Kategorileri Düzenle",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
@@ -217,8 +207,7 @@ class _userPageState extends State<userPage> {
                           padding: EdgeInsets.only(left: sw / 45),
                           child: Text(
                             "Karanlık Mod",
-                            style: TextStyle(
-                                fontSize: sw / 20),
+                            style: TextStyle(fontSize: sw / 20),
                           ),
                         ),
                         Spacer(),
@@ -244,7 +233,8 @@ class _userPageState extends State<userPage> {
                       padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                       child: Text(
                         "BONYBOM",
-                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                   ),
@@ -263,8 +253,7 @@ class _userPageState extends State<userPage> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Bonybom'u Arkadaşlarınla Paylaş",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                         ],
@@ -286,8 +275,7 @@ class _userPageState extends State<userPage> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Bize Ulaşın",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
@@ -315,8 +303,7 @@ class _userPageState extends State<userPage> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Bonybom Hakkında",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
@@ -343,8 +330,7 @@ class _userPageState extends State<userPage> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Gizlilik Politikası",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),
@@ -371,8 +357,7 @@ class _userPageState extends State<userPage> {
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
                               "Kullanım Koşulları",
-                              style: TextStyle(
-                                  fontSize: sw / 20),
+                              style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
                           Spacer(),

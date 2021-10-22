@@ -1,5 +1,5 @@
-import 'package:bonybom_app/pages/auth/login.dart';
-import 'package:bonybom_app/pages/auth/register.dart';
+import 'package:bonybom_app/screens/sing_in/login.dart';
+import 'package:bonybom_app/screens/sing_up/register.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

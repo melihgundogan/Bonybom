@@ -1,7 +1,7 @@
 import 'package:bonybom_app/models/category_model.dart';
-import 'package:bonybom_app/pages/auth/notification.dart';
-import 'package:bonybom_app/pages/auth/other_categorys.dart';
-import 'package:bonybom_app/pages/auth/to_you.dart';
+import 'package:bonybom_app/screens/notification/notification.dart';
+import 'package:bonybom_app/screens/category/other_categorys.dart';
+import 'package:bonybom_app/screens/category/to_you.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
@@ -52,7 +52,7 @@ class _SpecialCategoryState extends State<SpecialCategory> {
   var _svgIcon = new SvgIcn();
   @override
   Widget build(BuildContext context) {
-     /*final text = MediaQuery.of(context).platformBrightness == Brightness.dark
+    /*final text = MediaQuery.of(context).platformBrightness == Brightness.dark
       ? 'DarkTheme'
       : 'LightTheme';*/
     final _cat = Provider.of<CategoryNotifier>(context, listen: false);

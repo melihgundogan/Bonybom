@@ -46,9 +46,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/images/kategori/
     - assets/icons/
+    - assets/fonts/
     - assets/images/profile/
+    - assets/images/home_test/
+    - assets/images/kategori/
+    
 
   fonts:
     - family: Gilroy

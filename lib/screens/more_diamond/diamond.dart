@@ -1,4 +1,4 @@
-import 'package:bonybom_app/pages/auth/special_category.dart';
+import 'package:bonybom_app/screens/category/special_category.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 
