@@ -1,12 +1,12 @@
-import 'package:bonybom_app/dark_light.dart';
-import 'package:bonybom_app/screens/home/home_page.dart';
-import 'package:bonybom_app/opening.dart';
-import 'package:bonybom_app/screens/more_diamond/moreoptions.dart';
-import 'package:bonybom_app/screens/notification/notification.dart';
-import 'package:bonybom_app/screens/profile/userpage.dart';
+import 'dark_light.dart';
+import 'screens/home/home_page.dart';
+import 'opening.dart';
+import 'screens/more_diamond/moreoptions.dart';
+import 'screens/notification/notification.dart';
+import 'screens/profile/userpage.dart';
 
-import 'package:bonybom_app/source/providers.dart';
-import 'package:bonybom_app/source/response_notifier.dart';
+import 'source/providers.dart';
+import 'source/response_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
