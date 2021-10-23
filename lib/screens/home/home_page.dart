@@ -1,3 +1,5 @@
+import 'package:bonybom_app/components/coustom_app_bar.dart';
+import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
@@ -18,51 +20,24 @@ class _HomePageState extends State<HomePage> {
     final s = MediaQuery.of(context).size;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
+        ),
+        title: PreferredSize(
+            preferredSize: Size.fromHeight(100),
+            child: CustomAppBar(
+              selectedMenu: MenuState.home,
+            )),
+      ),
       backgroundColor: Colors.grey.shade200,
       body: Padding(
         padding: EdgeInsets.only(top: s.width / 18, bottom: s.width / 38),
         child: Column(
           children: [
-            Container(
-              height: s.width / 6,
-              width: s.width,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(31),
-                      bottomRight: Radius.circular(31)),
-                  color: Colors.white),
-              child: Padding(
-                padding:
-                    EdgeInsets.only(right: s.width / 15, left: s.width / 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
-                        },
-                        child: _svgIcon.home),
-                    Image.asset(
-                      "assets/icons/Logo.png",
-                      width: s.width / 11,
-                      height: s.width / 11,
-                    ),
-                    GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => userPage()));
-                        },
-                        child: _svgIcon.profile),
-                  ],
-                ),
-              ),
-            ),
             Swipe(
               child: Padding(
                 padding: EdgeInsets.only(

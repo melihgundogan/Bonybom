@@ -1,4 +1,4 @@
-import 'package:bonybom_app/pages/auth/auth.dart';
+import 'package:bonybom_app/auth.dart';
 import 'package:bonybom_app/screens/home/home_page.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';

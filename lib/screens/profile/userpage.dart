@@ -1,3 +1,5 @@
+import 'package:bonybom_app/components/coustom_app_bar.dart';
+import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/home/home_page.dart';
 import 'package:bonybom_app/screens/category/other_categorys.dart';
 import 'package:bonybom_app/screens/profile/editprofile.dart';
@@ -22,41 +24,24 @@ class _userPageState extends State<userPage> {
     final screenSize = MediaQuery.of(context).size;
     var sw = screenSize.width;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
+        ),
+        title: PreferredSize(
+            preferredSize: Size.fromHeight(100),
+            child: CustomAppBar(
+              selectedMenu: MenuState.home,
+            )),
+      ),
       //backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(top: sw / 12, bottom: sw / 40),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(right: sw / 15, left: sw / 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePage()));
-                      },
-                      child: _svgIcon.home),
-                  Image.asset(
-                    "assets/icons/Logo.png",
-                    width: sw / 11,
-                    height: sw / 11,
-                  ),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => userPage()));
-                      },
-                      child: _svgIcon.profile),
-                ],
-              ),
-            ),
             Padding(
               padding: EdgeInsets.only(top: sw / 25),
               child: Column(

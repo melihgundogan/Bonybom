@@ -1,4 +1,4 @@
-import 'package:bonybom_app/pages/auth/widgets.dart';
+import 'package:bonybom_app/widgets.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
@@ -38,35 +38,45 @@ class _RegisterState extends State<Register> {
           Card(
             color: Clr.darkestGray.withOpacity(0.1),
             margin: EdgeInsets.only(left: 20, top: 25),
-              child: SizedBox(
-                width: s.width/6,
-                height: s.height/20,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Row(
-                    children: [
-                      Column(
+            child: SizedBox(
+              width: s.width / 6,
+              height: s.height / 20,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Image.asset("assets/images/EngFlag.png"),
+                        Text(
+                          "ENG",
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Clr.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5),
+                      child: Column(
                         children: [
-                          Image.asset("assets/images/EngFlag.png"),
-                          Text("ENG",style: TextStyle(fontSize: 10,color: Clr.white,) ,),
+                          Image.asset("assets/images/TrFlag.png"),
+                          Text(
+                            "TR",
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Clr.white,
+                            ),
+                          ),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Column(
-                          children: [
-                            Image.asset("assets/images/TrFlag.png"),
-                            Text("TR",style: TextStyle(fontSize: 10,color: Clr.white,) ,),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ),
             ),
-
-
+          ),
           Container(
             width: s.width,
             height: s.height,

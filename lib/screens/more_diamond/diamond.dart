@@ -1,3 +1,5 @@
+import 'package:bonybom_app/components/coustom_app_bar.dart';
+import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/category/special_category.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,19 @@ class _AddDiamondState extends State<AddDiamond> {
     var sw = screenSize.width;
     var sh = screenSize.height;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
+        ),
+        title: PreferredSize(
+            preferredSize: Size.fromHeight(100),
+            child: CustomAppBar(
+              selectedMenu: MenuState.home,
+            )),
+      ),
       backgroundColor: Colors.white,
       body: Container(
         color: Colors.grey,
@@ -24,30 +39,6 @@ class _AddDiamondState extends State<AddDiamond> {
           padding: EdgeInsets.only(top: sw / 12, bottom: sw / 40),
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(right: sw / 15, left: sw / 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GestureDetector(onTap: () {}, child: _svgIcon.home),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SpecialCategory()));
-                      },
-                      child: Image.asset(
-                        "assets/icons/Logo.png",
-                        width: sw / 12,
-                        height: sw / 12,
-                      ),
-                    ),
-                    GestureDetector(onTap: () {}, child: _svgIcon.profile),
-                  ],
-                ),
-              ),
               Container(
                 height: sh / 1.5,
                 width: sw / 1.3,

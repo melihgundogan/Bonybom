@@ -1,3 +1,5 @@
+import 'package:bonybom_app/components/coustom_app_bar.dart';
+import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/home/home_page.dart';
 import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/screens/notification/favorites.dart';
@@ -46,29 +48,12 @@ class _NotificationPageState extends State<NotificationPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  HomePage()));
-                                    },
-                                    child: _svgIcon.home),
-                                Image.asset(
-                                  "assets/icons/Logo.png",
-                                  width: s.width / 12,
-                                  height: s.width / 12,
+                                PreferredSize(
+                                  preferredSize: Size.fromHeight(100),
+                                  child: CustomAppBar(
+                                    selectedMenu: MenuState.home,
+                                  ),
                                 ),
-                                GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  userPage()));
-                                    },
-                                    child: _svgIcon.profile),
                               ],
                             ),
                           ),

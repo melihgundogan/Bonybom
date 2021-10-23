@@ -6,7 +6,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 
 import '../category/category_select.dart';
-import '../../pages/auth/widgets.dart';
+import '../../widgets.dart';
 
 class Info extends StatefulWidget {
   const Info({Key? key}) : super(key: key);
@@ -76,7 +76,9 @@ class _InfoState extends State<Info> {
                         context,
                         s,
                         bgColor: Clr.darkestGray.withOpacity(0.7),
-                        onPressed: () {},
+                        onPressed: () {
+                          // doğum tarihinin seçilmesi
+                        },
                         child: Row(
                           children: [
                             Padding(
@@ -111,7 +113,9 @@ class _InfoState extends State<Info> {
                       child: authButton(
                         context,
                         s,
-                        onPressed: () {},
+                        onPressed: () {
+                          // ülke verilerinin çekilmesi ve seçilmesi.
+                        },
                         bgColor: Clr.darkestGray.withOpacity(0.7),
                         child: Row(
                           children: [
@@ -147,6 +151,9 @@ class _InfoState extends State<Info> {
                       child: authButton(
                         context,
                         s,
+                        onPressed: () {
+                          // cinsiyet seçilmesi.
+                        },
                         bgColor: Clr.darkestGray.withOpacity(0.7),
                         child: Row(
                           children: [
