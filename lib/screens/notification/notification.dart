@@ -32,7 +32,7 @@ class _NotificationPageState extends State<NotificationPage>
     final s = MediaQuery.of(context).size;
 
     return new MaterialApp(
-      color: Colors.black,
+      color: Colors.grey.shade200,
       debugShowCheckedModeBanner: false,
       title: 'msc',
       home: new DefaultTabController(

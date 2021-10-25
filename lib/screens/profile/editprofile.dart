@@ -3,6 +3,7 @@ import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/home/home_page.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/screens/category/special_category.dart';
+import 'package:bonybom_app/screens/profile/clean_up_cache.dart';
 import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
@@ -333,7 +334,9 @@ class _editProfileState extends State<editProfile> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        CounterStorage();
+                      },
                       child: Container(
                         height: sw / 7,
                         padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
