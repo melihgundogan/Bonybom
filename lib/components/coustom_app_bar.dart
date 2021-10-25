@@ -20,31 +20,31 @@ class CustomAppBar extends StatelessWidget {
 
     return SafeArea(
       top: false,
-      child: Padding(
-        padding: EdgeInsets.only(right: s.width / 15, left: s.width / 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
-                },
-                child: _svgIcon.home),
-            Image.asset(
-              "assets/icons/Logo.png",
-              width: s.width / 11,
-              height: s.width / 11,
-            ),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => userPage()));
-                },
-                child: _svgIcon.profile),
-          ],
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              child: _svgIcon.home),
+          Image.asset(
+            "assets/icons/Logo.png",
+            width: s.width / 11,
+            height: s.width / 11,
+          ),
+          GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => userPage()));
+              },
+              child: Padding(
+                padding: EdgeInsets.only(right: s.width / 25),
+                child: _svgIcon.profile,
+              )),
+        ],
       ),
     );
   }

@@ -1,4 +1,3 @@
-
 class Favorites_modul {
   final String favorite_text;
   final String favorite_subText;

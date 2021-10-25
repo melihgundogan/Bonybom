@@ -1,7 +1,6 @@
 import 'package:bonybom_app/models/category_model.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/screens/category/other_categorys.dart';
-import 'package:bonybom_app/screens/category/to_you.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';

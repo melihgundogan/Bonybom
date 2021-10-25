@@ -1,95 +1,96 @@
 import 'package:bonybom_app/components/coustom_app_bar.dart';
 import 'package:bonybom_app/enums.dart';
-import 'package:bonybom_app/screens/home/home_page.dart';
-import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/screens/notification/favorites.dart';
 import 'package:bonybom_app/screens/notification/recorded.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/services.dart';
 
 class NotificationPage extends StatefulWidget {
   @override
   _NotificationPageState createState() => _NotificationPageState();
 }
 
-class _NotificationPageState extends State<NotificationPage> {
+class _NotificationPageState extends State<NotificationPage>
+    with TickerProviderStateMixin {
   var _svgIcon = new SvgIcn();
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = new TabController(length: 2, vsync: this);
+    _tabController.addListener(_handleTabSelection);
+    super.initState();
+  }
+
+  void _handleTabSelection() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = MediaQuery.of(context).size;
 
     return new MaterialApp(
-      color: Colors.white,
+      color: Colors.black,
       debugShowCheckedModeBanner: false,
       title: 'msc',
       home: new DefaultTabController(
         length: 2,
         child: new Scaffold(
-          appBar: new PreferredSize(
-            preferredSize: Size.fromHeight(s.width / 3.5),
-            child: Expanded(
-              child: new Container(
-                color: Colors.grey.shade200,
-                child: new SafeArea(
-                  child: Column(
-                    children: <Widget>[
-                      new Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(31),
-                                  bottomRight: Radius.circular(31)),
-                              color: Colors.white),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 20, right: 30),
-                            child: new Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                PreferredSize(
-                                  preferredSize: Size.fromHeight(100),
-                                  child: CustomAppBar(
-                                    selectedMenu: MenuState.home,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(30),
+              ),
+            ),
+            title: PreferredSize(
+                preferredSize: Size.fromHeight(100),
+                child: CustomAppBar(
+                  selectedMenu: MenuState.logo,
+                )),
+          ),
+          body: Container(
+            color: Colors.grey.shade100,
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: s.width / 20),
+                  child: TabBar(
+                    indicatorColor: Colors.blue,
+                    indicatorPadding: EdgeInsets.zero,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    unselectedLabelColor: Colors.black,
+                    controller: _tabController,
+                    labelColor: Colors.black,
+                    tabs: [
+                      Tab(
+                        child: const Text(
+                          "Kaydedilenler",
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                      SizedBox(
-                        height: 50,
-                        child: new TabBar(
-                          tabs: [
-                            new Text(
-                              "Kaydedilenler",
-                              style: GoogleFonts.poppins(
-                                fontStyle: FontStyle.normal,
-                                color: Colors.grey.shade900,
-                                fontSize: 19,
-                              ),
-                            ),
-                            new Text(
-                              "Beğenilenler",
-                              style: GoogleFonts.poppins(
-                                fontStyle: FontStyle.normal,
-                                color: Colors.grey.shade900,
-                                fontSize: 19,
-                              ),
-                            )
-                          ],
+                      Tab(
+                        child: const Text(
+                          "Beğenilenler",
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],
                   ),
                 ),
-              ),
+                Expanded(
+                  child: Container(
+                    color: Colors.white,
+                    child: TabBarView(
+                      children: [new recordedPage(), new FavoritesPage()],
+                      controller: _tabController,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-          body: new TabBarView(
-            children: <Widget>[new recordedPage(), new FavoritesPage()],
           ),
         ),
       ),
