@@ -32,6 +32,9 @@ dependencies:
   swipe: ^0.0.1
   shared_preferences: ^2.0.8
   get_it: ^7.2.0
+  parse_server_sdk_flutter: ^3.1.0
+  equatable: ^2.0.3
+  dartz: ^0.10.0
 
 dev_dependencies:
   flutter_test:

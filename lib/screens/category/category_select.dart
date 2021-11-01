@@ -1,14 +1,10 @@
 import 'package:bonybom_app/models/category_model.dart';
-import 'package:bonybom_app/screens/profile/info.dart';
+import 'package:bonybom_app/screens/home/home_page.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
-import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-
-import '../../widgets.dart';
 
 class CategorySelect extends StatefulWidget {
   const CategorySelect({Key? key}) : super(key: key);
@@ -114,7 +110,7 @@ class _CategorySelectState extends State<CategorySelect> {
                           builder: (
                         context,
                       ) =>
-                              NotificationPage()));
+                              HomePage()));
                 },
                 shape: CircleBorder(),
                 height: hh(context, 48),
