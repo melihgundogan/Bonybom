@@ -1,35 +1,35 @@
-import 'package:bonybom_app/core/error/exceptions.dart';
-import 'package:bonybom_app/data/datasources/suggestion/suggestion_api.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../core/error/exceptions.dart';
 import '../../core/error/failures.dart';
 import '../../domain/entities/suggestion.dart';
 import '../../domain/repositories/suggestion_repository.dart';
+import '../datasources/suggestion/suggestion_api.dart';
 
 class SuggestionRepositoryImpl implements SuggestionRepository {
   final SuggestionApi suggestionApi;
 
-  SuggestionRepositoryImpl(this.suggestionApi);
+  SuggestionRepositoryImpl({required this.suggestionApi});
 
   @override
-  Future<Either<Failure, List<Suggestion>>> getAllSuggestions() async {
+  Future<List<Suggestion>> getAllSuggestions() async {
     try {
       final remoteSuggestions = await suggestionApi.getAllSuggestions();
 
-      return Right(remoteSuggestions);
-    } on ServerException {
-      return Left(ServerFailure());
+      return remoteSuggestions;
+    } catch (e) {
+      throw Exception(e);
     }
   }
 
   @override
-  Future<Either<Failure, Suggestion>> getSuggestion(String id) async {
+  Future<Suggestion> getSuggestion(String id) async {
     try {
       final remoteSuggestion = await suggestionApi.getSuggestion(id);
 
-      return Right(remoteSuggestion);
-    } on ServerException {
-      return Left(ServerFailure());
+      return remoteSuggestion;
+    } catch (e) {
+      throw Exception(e);
     }
   }
 }

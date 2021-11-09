@@ -1,5 +1,5 @@
 import 'package:bonybom_app/enums.dart';
-import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/home/view/home_page.dart';
 import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +26,7 @@ class CustomAppBar extends StatelessWidget {
         children: [
           GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
               },
               child: _svgIcon.home),
           Image.asset(
@@ -37,8 +36,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => userPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => userPage()));
               },
               child: Padding(
                 padding: EdgeInsets.only(right: s.width / 25),

@@ -1,5 +1,5 @@
 import 'package:bonybom_app/models/category_model.dart';
-import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/home/view/home_page.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
@@ -39,8 +39,7 @@ class _CategorySelectState extends State<CategorySelect> {
                 ),
               ),
             ),
-            Consumer(
-                builder: (_, CategoryNotifier categoryState, Widget? child) {
+            Consumer(builder: (_, CategoryNotifier categoryState, Widget? child) {
               if (categoryState.loading) {
                 return Center(
                   child: CircularProgressIndicator(),
@@ -61,8 +60,7 @@ class _CategorySelectState extends State<CategorySelect> {
                         ),
                         SizedBox(height: hh(context, 28.46)),
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: ww(context, 32)),
+                          padding: EdgeInsets.symmetric(horizontal: ww(context, 32)),
                           child: Text(
                             "Seni daha iyi tanıyabilmemiz ve sana özel önerilerde bulunabilmemiz için aşağıdan en az 4 kategori seç.",
                             textAlign: TextAlign.center,

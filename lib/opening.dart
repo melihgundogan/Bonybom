@@ -1,4 +1,4 @@
-import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/home/view/home_page.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -91,13 +91,11 @@ class Opening extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: ww(context, 32)),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   height: hh(context, 72),
                   color: Clr.mainBlue,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(ww(context, 25))),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(ww(context, 25))),
                   child: Text(
                     "Haydi Başlayalım",
                     style: TextStyle(

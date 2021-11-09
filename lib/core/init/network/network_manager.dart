@@ -12,7 +12,7 @@ class BaseService {
   BaseService._init();
 
   INetworkManager networkManager = NetworkManager(
-    isEnableLogger: true,
+    isEnableLogger: false,
     options: BaseOptions(baseUrl: ApplicationConstants.API_URL),
   );
 }

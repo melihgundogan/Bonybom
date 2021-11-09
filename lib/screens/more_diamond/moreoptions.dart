@@ -1,7 +1,7 @@
 import 'package:bonybom_app/components/coustom_app_bar.dart';
 import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/more_diamond/diamond.dart';
-import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/home/view/home_page.dart';
 import 'package:bonybom_app/screens/category/special_category.dart';
 import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
@@ -49,17 +49,14 @@ class _MoreOptionsState extends State<MoreOptions> {
                   child: Text(
                     "DAHA FAZLA HAK ELDE ET!",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600, fontSize: sw / 20),
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: sw / 20),
                   ),
                 ),
                 GestureDetector(
                   onTap: () {},
                   child: Container(
                     margin: EdgeInsets.only(top: sw / 8, bottom: sw / 15),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(25))),
                     height: sw / 5,
                     width: sw / 1.2,
                     child: Padding(
@@ -70,12 +67,9 @@ class _MoreOptionsState extends State<MoreOptions> {
                             children: [
                               Text(
                                 "ARKADAŞLARINI DAVET ET",
-                                style: TextStyle(
-                                    fontSize: sw / 26,
-                                    fontWeight: FontWeight.w600),
+                                style: TextStyle(fontSize: sw / 26, fontWeight: FontWeight.w600),
                               ),
-                              Text("Bağlantını paylaş ve ek +50 elmas kazan.",
-                                  style: TextStyle(fontSize: sw / 35)),
+                              Text("Bağlantını paylaş ve ek +50 elmas kazan.", style: TextStyle(fontSize: sw / 35)),
                             ],
                           ),
                         ],
@@ -85,14 +79,11 @@ class _MoreOptionsState extends State<MoreOptions> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AddDiamond()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AddDiamond()));
                   },
                   child: Container(
                     margin: EdgeInsets.only(bottom: sw / 15),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(25))),
                     height: sw / 5,
                     width: sw / 1.2,
                     child: Padding(
@@ -103,12 +94,9 @@ class _MoreOptionsState extends State<MoreOptions> {
                             children: [
                               Text(
                                 "ELMAS SATIN AL",
-                                style: TextStyle(
-                                    fontSize: sw / 26,
-                                    fontWeight: FontWeight.w600),
+                                style: TextStyle(fontSize: sw / 26, fontWeight: FontWeight.w600),
                               ),
-                              Text("Elmas paket satın al",
-                                  style: TextStyle(fontSize: sw / 35)),
+                              Text("Elmas paket satın al", style: TextStyle(fontSize: sw / 35)),
                             ],
                           ),
                         ],
@@ -120,9 +108,7 @@ class _MoreOptionsState extends State<MoreOptions> {
                   onTap: () {},
                   child: Container(
                     margin: EdgeInsets.only(bottom: sw / 15),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(25))),
                     height: sw / 5,
                     width: sw / 1.2,
                     child: Padding(
@@ -133,12 +119,9 @@ class _MoreOptionsState extends State<MoreOptions> {
                             children: [
                               Text(
                                 "VIDEO İZLEYİN",
-                                style: TextStyle(
-                                    fontSize: sw / 26,
-                                    fontWeight: FontWeight.w600),
+                                style: TextStyle(fontSize: sw / 26, fontWeight: FontWeight.w600),
                               ),
-                              Text("50 elmas kazanmak için bir video izleyin",
-                                  style: TextStyle(fontSize: sw / 35)),
+                              Text("50 elmas kazanmak için bir video izleyin", style: TextStyle(fontSize: sw / 35)),
                             ],
                           ),
                         ],
@@ -150,9 +133,7 @@ class _MoreOptionsState extends State<MoreOptions> {
                   onTap: () {},
                   child: Container(
                     margin: EdgeInsets.only(bottom: sw / 15),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(25))),
                     height: sw / 5,
                     width: sw / 1.2,
                     child: Padding(
@@ -163,12 +144,9 @@ class _MoreOptionsState extends State<MoreOptions> {
                             children: [
                               Text(
                                 "PREMIUM'U DENE",
-                                style: TextStyle(
-                                    fontSize: sw / 26,
-                                    fontWeight: FontWeight.w600),
+                                style: TextStyle(fontSize: sw / 26, fontWeight: FontWeight.w600),
                               ),
-                              Text("Her şeyin sana özel olduğu bir dünya",
-                                  style: TextStyle(fontSize: sw / 35)),
+                              Text("Her şeyin sana özel olduğu bir dünya", style: TextStyle(fontSize: sw / 35)),
                             ],
                           ),
                         ],

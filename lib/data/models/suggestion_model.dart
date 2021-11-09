@@ -11,11 +11,17 @@ class SuggestionModel extends INetworkModel<SuggestionModel> {
   String? title;
   String? description;
   String? startAt;
+  @JsonKey(includeIfNull: false)
   String? endAt;
+  @JsonKey(includeIfNull: false)
   String? likeCount;
+  @JsonKey(includeIfNull: false)
   String? dislikeCount;
+  @JsonKey(includeIfNull: false)
   String? tickCount;
+  @JsonKey(includeIfNull: false)
   String? saveCount;
+  @JsonKey(includeIfNull: false)
   String? createdAt;
 
   SuggestionModel({

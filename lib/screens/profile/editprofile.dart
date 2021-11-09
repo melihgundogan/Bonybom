@@ -1,6 +1,6 @@
 import 'package:bonybom_app/components/coustom_app_bar.dart';
 import 'package:bonybom_app/enums.dart';
-import 'package:bonybom_app/screens/home/home_page.dart';
+import 'package:bonybom_app/screens/home/view/home_page.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/screens/category/special_category.dart';
 import 'package:bonybom_app/screens/profile/clean_up_cache.dart';
@@ -96,8 +96,7 @@ class _editProfileState extends State<editProfile> {
                         padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                         child: Text(
                           "HESABIM",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
+                          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                       ),
                     ),
@@ -143,16 +142,12 @@ class _editProfileState extends State<editProfile> {
                     GestureDetector(
                       onTap: () async {
                         final datePick = await showDatePicker(
-                            context: context,
-                            initialDate: new DateTime.now(),
-                            firstDate: new DateTime(1900),
-                            lastDate: new DateTime(2100));
+                            context: context, initialDate: new DateTime.now(), firstDate: new DateTime(1900), lastDate: new DateTime(2100));
                         if (datePick != null && datePick != birthDate) {
                           setState(() {
                             birthDate = datePick;
                             isDateSelected = true;
-                            birthDateInString =
-                                "${birthDate.month}/${birthDate.day}/${birthDate.year}";
+                            birthDateInString = "${birthDate.month}/${birthDate.day}/${birthDate.year}";
                           });
                         }
                       },
@@ -296,10 +291,7 @@ class _editProfileState extends State<editProfile> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => editProfile()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => editProfile()));
                       },
                       child: Container(
                         height: sw / 7,
@@ -328,8 +320,7 @@ class _editProfileState extends State<editProfile> {
                         padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                         child: Text(
                           "HESAP İŞLEMLERİ",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
+                          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                       ),
                     ),
