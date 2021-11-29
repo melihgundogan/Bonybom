@@ -11,7 +11,7 @@ class HomePageCubit extends Cubit<HomePageState> {
   HomePageCubit() : super(HomePageInitial());
 
   bool isLoading = false;
-
+  int swipeValue = 0;
   void fetchSuggestions() async {
     changeLoadingView();
     final data = await _getAllSuggestions(NoParams());
@@ -19,6 +19,11 @@ class HomePageCubit extends Cubit<HomePageState> {
     if (data.isNotEmpty) {
       emit(SuggestionsLoadedState(data));
     }
+  }
+
+  void swipedUp() {
+    emit(SuggestionSwipedUpState(swipedValue: swipeValue + 1));
+    
   }
 
   void changeLoadingView() {
@@ -41,4 +46,10 @@ class SuggestionsLoadedState extends HomePageState {
   final List<Suggestion> suggestions;
 
   SuggestionsLoadedState(this.suggestions);
+}
+
+class SuggestionSwipedUpState extends HomePageState {
+  final int swipedValue;
+
+  SuggestionSwipedUpState({required this.swipedValue});
 }

@@ -1,10 +1,6 @@
-import 'package:dartz/dartz.dart';
-
-import '../../core/error/exceptions.dart';
-import '../../core/error/failures.dart';
 import '../../domain/entities/suggestion.dart';
 import '../../domain/repositories/suggestion_repository.dart';
-import '../datasources/suggestion/suggestion_api.dart';
+import '../datasources/remote/suggestion/suggestion_api.dart';
 
 class SuggestionRepositoryImpl implements SuggestionRepository {
   final SuggestionApi suggestionApi;

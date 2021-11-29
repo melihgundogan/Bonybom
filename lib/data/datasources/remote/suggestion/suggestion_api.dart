@@ -1,4 +1,4 @@
-import '../../../domain/entities/suggestion.dart';
+import '../../../../domain/entities/suggestion.dart';
 
 abstract class SuggestionApi {
   ///Calls the suggestions endpoint and gets the selected suggestion from the api

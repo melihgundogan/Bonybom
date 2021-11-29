@@ -57,7 +57,6 @@ class _HomePageState extends State<HomePage> {
               BlocConsumer<HomePageCubit, HomePageState>(
                 listener: (context, state) {},
                 builder: (context, state) {
-                  print(state);
                   if (state is SuggestionsLoadingState) {
                     return CircularProgressIndicator();
                   } else if (state is SuggestionsLoadedState) {
@@ -76,9 +75,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       onSwipeUp: () {
-                        setState(() {
-                          _message = 'Swiping up';
-                        });
+                        BlocProvider.of<HomePageCubit>(context).swipedUp();
                       },
                       onSwipeDown: () {
                         setState(() {

@@ -17,10 +17,14 @@ extension NetworkExtension on HttpTypes {
 extension NetworkPathValue on NetworkPath {
   String get rawValue {
     switch (this) {
+      case NetworkPath.LOGIN:
+        return "user/api/login";
       case NetworkPath.SUGGESTION:
         return "suggestion";
       case NetworkPath.ALLSUGGESTION:
         return "suggestion/all";
+      case NetworkPath.SUGGESTION_ON_CATEGORY:
+        return "suggestion/category/";
       case NetworkPath.LOCATION:
         return "location";
       case NetworkPath.CATEGORIES:

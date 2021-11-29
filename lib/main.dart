@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'core/init/cache/local_manager.dart';
@@ -8,9 +9,9 @@ import 'screens/home/view/home_page.dart';
 import 'source/providers.dart';
 import 'source/response_notifier.dart';
 
-void main() {
+void main() async {
   di.init();
-
+  await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
   LocalManager.preferencesInit();
 
