@@ -1,5 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
+import '../../../../../domain/entities/auth.dart';
+
 part 'auth_model.g.dart';
 
 @HiveType(typeId: 0, adapterName: 'AuthAdapter')
@@ -26,4 +28,13 @@ class AuthModel {
     this.token,
     this.isLogin,
   });
+
+  AuthModel fromEntity(Auth auth) {
+    return AuthModel(
+      message: this.message,
+      categories: this.categories,
+      status: this.status,
+      token: this.token,
+    );
+  }
 }

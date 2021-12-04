@@ -1,1 +1,1 @@
-enum PreferencesKeys { TOKEN, IS_FIRST_APP }
+enum PreferencesKeys { IS_LOGGEDIN, TOKEN, IS_FIRST_APP }

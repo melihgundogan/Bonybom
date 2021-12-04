@@ -2,15 +2,17 @@ import 'package:bonybom_app/core/constants/enums/locale_keys_enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalManager {
-  static LocalManager _instance = LocalManager._init();
+  static final LocalManager _instance = LocalManager._init();
 
   SharedPreferences? _preferences;
   static LocalManager get instance => _instance;
-  LocalManager._init() {
-    SharedPreferences.getInstance().then((value) => _preferences = value);
-  }
 
-  static Future preferencesInit() async {
+  LocalManager._init() {
+    SharedPreferences.getInstance().then((value) {
+      _preferences = value;
+    });
+  }
+  static Future prefrencesInit() async {
     instance._preferences ??= await SharedPreferences.getInstance();
   }
 
