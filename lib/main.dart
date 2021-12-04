@@ -1,27 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:provider/provider.dart';
 
-import 'core/init/cache/local_manager.dart';
 import 'dark_light.dart';
 import 'injection_container.dart' as di;
-import 'screens/home/view/home_page.dart';
-import 'source/providers.dart';
-import 'source/response_notifier.dart';
+import 'screens/splash/view/splash.dart';
 
 void main() async {
   di.init();
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
-  LocalManager.preferencesInit();
 
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (_) => AuthPage()),
-      ChangeNotifierProvider(create: (_) => CategoryNotifier()),
-    ],
-    child: MyApp(),
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +22,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
-      home: HomePage(),
+      home: SplashView(),
     );
   }
 }
