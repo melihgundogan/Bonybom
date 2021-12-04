@@ -1,15 +1,18 @@
-import 'package:bonybom_app/core/usecases/usecase.dart';
-import 'package:bonybom_app/domain/entities/auth.dart';
-import 'package:bonybom_app/domain/params/auth_params.dart';
-import 'package:bonybom_app/domain/repositories/auth_repository.dart';
+// import 'package:dartz/dartz.dart';
 
-class LoginOperation implements UseCase<Auth, AuthParams> {
-  final AuthRepository _authRepository;
+// import '../../../core/error/failures.dart';
+// import '../../../core/usecases/usecase.dart';
+// import '../../entities/auth.dart';
+// import '../../params/auth_params.dart';
+// import '../../repositories/auth_repository.dart';
 
-  LoginOperation(this._authRepository);
+// class LoginOperation implements UseCase<Auth, AuthParams> {
+//   final AuthRepository _authRepository;
 
-  @override
-  Future<Auth> call(AuthParams params) async {
-    return await _authRepository.loginOperation(params.userName, params.password);
-  }
-}
+//   LoginOperation(this._authRepository);
+
+//   @override
+//   Future<Either<Failure, Auth>> call(AuthParams params) async {
+//     return await _authRepository.loginOperation(params.userName, params.password);
+//   }
+// }

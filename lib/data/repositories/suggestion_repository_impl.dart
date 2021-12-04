@@ -1,31 +1,43 @@
+import 'package:dartz/dartz.dart';
+
+import '../../core/error/failures.dart';
 import '../../domain/entities/suggestion.dart';
 import '../../domain/repositories/suggestion_repository.dart';
-import '../datasources/remote/suggestion/suggestion_api.dart';
+import '../datasources/remote/suggestion/suggestions_remote_datasource.dart';
 
 class SuggestionRepositoryImpl implements SuggestionRepository {
-  final SuggestionApi suggestionApi;
+  final SuggestionsRemoteDataSource remoteDataSource;
 
-  SuggestionRepositoryImpl({required this.suggestionApi});
+  SuggestionRepositoryImpl({required this.remoteDataSource});
 
   @override
-  Future<List<Suggestion>> getAllSuggestions() async {
+  Future<Either<Failure, List<Suggestion>>> getAllSuggestions() async {
     try {
-      final remoteSuggestions = await suggestionApi.getAllSuggestions();
-
-      return remoteSuggestions;
-    } catch (e) {
-      throw Exception(e);
+      final response = await remoteDataSource.getAllSuggestions();
+      return response.fold((failure) => Left(failure), (suggestions) async {
+        if (suggestions != null && suggestions.isNotEmpty) {
+          return Right(suggestions);
+        }
+        return const Left(Failure("Her hangi bir öneri bulunamadı."));
+      });
+    } on Exception catch (_) {
+      return const Left(Failure("Bir hata oluştu"));
     }
   }
 
   @override
-  Future<Suggestion> getSuggestion(String id) async {
+  Future<Either<Failure, Suggestion>> getSuggestion(String id) async {
     try {
-      final remoteSuggestion = await suggestionApi.getSuggestion(id);
+      final response = await remoteDataSource.getSingleSuggestion(id);
+      return response.fold((failure) => Left(failure), (suggestion) async {
+        if (suggestion != null) {
+          return Right(suggestion);
+        }
 
-      return remoteSuggestion;
-    } catch (e) {
-      throw Exception(e);
+        return const Left(Failure("Öneri bulunamadı."));
+      });
+    } on Exception catch (_) {
+      return const Left(Failure("Bir hata oluştu."));
     }
   }
 }

@@ -12,7 +12,7 @@ class GetSingleSuggestion implements UseCase<Suggestion, SuggestionParams> {
   GetSingleSuggestion(this.suggestionRepository);
 
   @override
-  Future<Suggestion> call(SuggestionParams params) async {
+  Future<Either<Failure, Suggestion>> call(SuggestionParams params) async {
     return await suggestionRepository.getSuggestion(params.id);
   }
 }
