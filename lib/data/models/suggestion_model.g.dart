@@ -21,26 +21,17 @@ SuggestionModel _$SuggestionModelFromJson(Map<String, dynamic> json) =>
       createdAt: json['createdAt'] as String?,
     );
 
-Map<String, dynamic> _$SuggestionModelToJson(SuggestionModel instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'image': instance.image,
-    'title': instance.title,
-    'description': instance.description,
-    'startAt': instance.startAt,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('endAt', instance.endAt);
-  writeNotNull('likeCount', instance.likeCount);
-  writeNotNull('dislikeCount', instance.dislikeCount);
-  writeNotNull('tickCount', instance.tickCount);
-  writeNotNull('saveCount', instance.saveCount);
-  writeNotNull('createdAt', instance.createdAt);
-  return val;
-}
+Map<String, dynamic> _$SuggestionModelToJson(SuggestionModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'image': instance.image,
+      'title': instance.title,
+      'description': instance.description,
+      'startAt': instance.startAt,
+      'endAt': instance.endAt,
+      'likeCount': instance.likeCount,
+      'dislikeCount': instance.dislikeCount,
+      'tickCount': instance.tickCount,
+      'saveCount': instance.saveCount,
+      'createdAt': instance.createdAt,
+    };

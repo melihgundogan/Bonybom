@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
 
 class Suggestion extends Equatable {
   final String? id;
@@ -14,20 +15,20 @@ class Suggestion extends Equatable {
   final String? createdAt;
 
   Suggestion({
-    this.id,
-    this.image,
-    this.title,
-    this.description,
-    this.startAt,
-    this.endAt,
-    this.likeCount,
-    this.dislikeCount,
-    this.tickCount,
-    this.saveCount,
-    this.createdAt,
+    @required this.id,
+    @required this.image,
+    @required this.title,
+    @required this.description,
+    @required this.startAt,
+    @required this.endAt,
+    @required this.likeCount,
+    @required this.dislikeCount,
+    @required this.tickCount,
+    @required this.saveCount,
+    @required this.createdAt,
   });
 
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [id, image, title, description, startAt, endAt, likeCount, dislikeCount, tickCount, saveCount, createdAt];
 }

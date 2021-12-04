@@ -1,6 +1,9 @@
+import 'package:dartz/dartz.dart';
+
+import '../../core/error/failures.dart';
 import '../entities/suggestion.dart';
 
 abstract class SuggestionRepository {
-  Future<Suggestion> getSuggestion(String id);
-  Future<List<Suggestion>> getAllSuggestions();
+  Future<Either<Failure, Suggestion>> getSuggestion(String id);
+  Future<Either<Failure, List<Suggestion>>> getAllSuggestions();
 }

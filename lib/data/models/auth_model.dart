@@ -1,12 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:vexana/vexana.dart';
 
 import '../../domain/entities/auth.dart';
 
 part 'auth_model.g.dart';
 
 @JsonSerializable()
-class AuthModel extends INetworkModel<AuthModel> {
+class AuthModel {
   String? message;
   List<int>? categories;
   int? status;

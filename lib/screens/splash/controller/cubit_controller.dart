@@ -10,7 +10,7 @@ class SplashCubit extends Cubit<SplashState> {
   Future<void> controlSplashStatus() async {
     emit(const Loading());
     await LocalManager.prefrencesInit();
-    final isLoggedIn = LocalManager.instance.getBoolValue(PreferencesKeys.IS_LOGGEDIN);
+    final isLoggedIn = true;
     if (isLoggedIn) {
       emit(const LoggedIn());
     } else {

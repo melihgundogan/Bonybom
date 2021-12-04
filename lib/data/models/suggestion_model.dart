@@ -1,79 +1,69 @@
 import 'package:bonybom_app/domain/entities/suggestion.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:vexana/vexana.dart';
+import 'package:meta/meta.dart';
 
 part 'suggestion_model.g.dart';
 
 @JsonSerializable()
-class SuggestionModel extends INetworkModel<SuggestionModel> {
-  String? id;
-  String? image;
-  String? title;
-  String? description;
-  String? startAt;
-  @JsonKey(includeIfNull: false)
-  String? endAt;
-  @JsonKey(includeIfNull: false)
-  String? likeCount;
-  @JsonKey(includeIfNull: false)
-  String? dislikeCount;
-  @JsonKey(includeIfNull: false)
-  String? tickCount;
-  @JsonKey(includeIfNull: false)
-  String? saveCount;
-  @JsonKey(includeIfNull: false)
-  String? createdAt;
-
+class SuggestionModel extends Suggestion {
   SuggestionModel({
-    this.id,
-    this.image,
-    this.title,
-    this.description,
-    this.startAt,
-    this.endAt,
-    this.likeCount,
-    this.dislikeCount,
-    this.tickCount,
-    this.saveCount,
-    this.createdAt,
-  });
+    @required String? id,
+    @required String? image,
+    @required String? title,
+    @required String? description,
+    @required String? startAt,
+    @required String? endAt,
+    @required String? likeCount,
+    @required String? dislikeCount,
+    @required String? tickCount,
+    @required String? saveCount,
+    @required String? createdAt,
+  }) : super(
+          id: id,
+          image: image,
+          title: title,
+          description: description,
+          startAt: startAt,
+          endAt: endAt,
+          likeCount: likeCount,
+          dislikeCount: dislikeCount,
+          tickCount: tickCount,
+          saveCount: saveCount,
+          createdAt: createdAt,
+        );
 
   factory SuggestionModel.fromJson(Map<String, dynamic> json) => _$SuggestionModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$SuggestionModelToJson(this);
 
-  Suggestion toEntity() => Suggestion(
-        id: this.id,
-        image: this.image,
-        title: this.title,
-        description: this.description,
-        startAt: this.startAt,
-        endAt: this.endAt,
-        likeCount: this.likeCount,
-        dislikeCount: this.dislikeCount,
-        tickCount: this.tickCount,
-        saveCount: this.saveCount,
-        createdAt: this.createdAt,
-      );
+  // Suggestion toEntity() => Suggestion(
+  //       id: this.id,
+  //       image: this.image,
+  //       title: this.title,
+  //       description: this.description,
+  //       startAt: this.startAt,
+  //       endAt: this.endAt,
+  //       likeCount: this.likeCount,
+  //       dislikeCount: this.dislikeCount,
+  //       tickCount: this.tickCount,
+  //       saveCount: this.saveCount,
+  //       createdAt: this.createdAt,
+  //     );
 
-  SuggestionModel fromEntity(Suggestion suggestion) {
-    return SuggestionModel(
-      id: suggestion.id,
-      image: suggestion.image,
-      title: suggestion.title,
-      description: suggestion.description,
-      startAt: suggestion.startAt,
-      endAt: suggestion.endAt,
-      likeCount: suggestion.likeCount,
-      dislikeCount: suggestion.dislikeCount,
-      tickCount: suggestion.tickCount,
-      saveCount: suggestion.saveCount,
-      createdAt: suggestion.createdAt,
-    );
-  }
+  // SuggestionModel fromEntity(Suggestion suggestion) {
+  //   return SuggestionModel(
+  //     id: suggestion.id,
+  //     image: suggestion.image,
+  //     title: suggestion.title,
+  //     description: suggestion.description,
+  //     startAt: suggestion.startAt,
+  //     endAt: suggestion.endAt,
+  //     likeCount: suggestion.likeCount,
+  //     dislikeCount: suggestion.dislikeCount,
+  //     tickCount: suggestion.tickCount,
+  //     saveCount: suggestion.saveCount,
+  //     createdAt: suggestion.createdAt,
+  //   );
+  // }
 
-  @override
-  SuggestionModel fromJson(Map<String, dynamic> json) {
-    return SuggestionModel.fromJson(json);
-  }
 }
