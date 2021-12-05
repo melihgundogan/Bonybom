@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class Auth extends Equatable {
   final String? message;
-  final List<int>? categories;
+  final List<String>? categories;
   final int? status;
   final String? token;
 

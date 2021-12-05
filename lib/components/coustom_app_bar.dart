@@ -1,5 +1,5 @@
 import 'package:bonybom_app/enums.dart';
-import 'package:bonybom_app/screens/home/view/home_page.dart';
+import 'package:bonybom_app/presentation/home/view/home_page.dart';
 import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';

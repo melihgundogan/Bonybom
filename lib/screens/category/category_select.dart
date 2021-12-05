@@ -1,5 +1,5 @@
 import 'package:bonybom_app/models/category_model.dart';
-import 'package:bonybom_app/screens/home/view/home_page.dart';
+import 'package:bonybom_app/presentation/home/view/home_page.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';

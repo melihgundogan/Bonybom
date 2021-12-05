@@ -8,8 +8,9 @@ part of 'auth_model.dart';
 
 AuthModel _$AuthModelFromJson(Map<String, dynamic> json) => AuthModel(
       message: json['message'] as String?,
-      categories:
-          (json['categories'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      categories: (json['categories'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       status: json['status'] as int?,
       token: json['token'] as String?,
     );

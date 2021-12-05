@@ -1,11 +1,9 @@
-import 'package:bonybom_app/components/coustom_app_bar.dart';
-import 'package:bonybom_app/enums.dart';
-import 'package:bonybom_app/screens/more_diamond/diamond.dart';
-import 'package:bonybom_app/screens/home/view/home_page.dart';
-import 'package:bonybom_app/screens/category/special_category.dart';
-import 'package:bonybom_app/screens/profile/userpage.dart';
-import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
+
+import '../../components/coustom_app_bar.dart';
+import '../../enums.dart';
+import '../../source/icons.dart';
+import 'diamond.dart';
 
 class MoreOptions extends StatefulWidget {
   const MoreOptions({Key? key}) : super(key: key);

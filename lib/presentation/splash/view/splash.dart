@@ -1,8 +1,9 @@
 import 'package:bonybom_app/core/widgets/index.dart' as core_widgets;
-import 'package:bonybom_app/screens/home/view/home_page.dart';
+import 'package:bonybom_app/presentation/auth/view/login_view.dart';
+import 'package:bonybom_app/presentation/home/view/home_page.dart';
 
 import 'package:bonybom_app/screens/sing_in/login.dart';
-import 'package:bonybom_app/screens/splash/controller/index.dart';
+import 'package:bonybom_app/presentation/splash/controller/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +18,7 @@ class SplashView extends StatelessWidget {
         return state.when(
           initial: () => core_widgets.LoadingWidget(),
           loading: () => core_widgets.LoadingWidget(),
-          notLoggedIn: () => Login(),
+          notLoggedIn: () => LoginView(),
           loggedIn: () => HomePage(),
         );
       }),
