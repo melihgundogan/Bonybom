@@ -1,11 +1,11 @@
+import 'package:bonybom_app/data/models/request/auth_request_model.dart';
 import 'package:equatable/equatable.dart';
 
 class AuthParams extends Equatable {
-  final String userName;
-  final String password;
+  final AuthRequestModel requestModel;
 
-  AuthParams({required this.userName, required this.password});
+  AuthParams({required this.requestModel});
 
   @override
-  List<Object?> get props => [this.userName, this.password];
+  List<Object?> get props => [this.requestModel];
 }

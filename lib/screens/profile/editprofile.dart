@@ -1,12 +1,9 @@
-import 'package:bonybom_app/components/coustom_app_bar.dart';
-import 'package:bonybom_app/enums.dart';
-import 'package:bonybom_app/screens/home/view/home_page.dart';
-import 'package:bonybom_app/screens/notification/notification.dart';
-import 'package:bonybom_app/screens/category/special_category.dart';
-import 'package:bonybom_app/screens/profile/clean_up_cache.dart';
-import 'package:bonybom_app/screens/profile/userpage.dart';
-import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
+
+import '../../components/coustom_app_bar.dart';
+import '../../enums.dart';
+import '../../source/icons.dart';
+import 'clean_up_cache.dart';
 
 class editProfile extends StatefulWidget {
   const editProfile({Key? key}) : super(key: key);

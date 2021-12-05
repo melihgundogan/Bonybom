@@ -1,9 +1,8 @@
-import 'package:bonybom_app/core/constants/enums/network_path.dart';
-import 'package:bonybom_app/core/extension/network_extension.dart';
-import 'package:bonybom_app/data/datasources/remote/suggestion/suggestion_endpoints.dart';
-import 'package:bonybom_app/data/models/suggestion_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../../../models/suggestion_model.dart';
+import 'suggestion_endpoints.dart';
 
 part 'suggestion_remote_api_service.g.dart';
 

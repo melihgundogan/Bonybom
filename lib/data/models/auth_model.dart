@@ -5,9 +5,9 @@ import '../../domain/entities/auth.dart';
 part 'auth_model.g.dart';
 
 @JsonSerializable()
-class AuthModel {
+class AuthModel extends Auth {
   String? message;
-  List<int>? categories;
+  List<String>? categories;
   int? status;
   String? token;
 
@@ -36,10 +36,5 @@ class AuthModel {
       status: this.status,
       token: this.token,
     );
-  }
-
-  @override
-  AuthModel fromJson(Map<String, dynamic> json) {
-    return AuthModel.fromJson(json);
   }
 }

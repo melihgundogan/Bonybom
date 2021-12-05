@@ -2,7 +2,7 @@ import 'package:bonybom_app/core/error/failures.dart';
 import 'package:bonybom_app/core/usecases/usecase.dart';
 import 'package:bonybom_app/domain/entities/suggestion.dart';
 import 'package:bonybom_app/domain/usecases/suggestion/get_all_remote_suggestions.dart';
-import 'package:bonybom_app/screens/home/controller/state.dart';
+import 'package:bonybom_app/presentation/home/controller/state.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
