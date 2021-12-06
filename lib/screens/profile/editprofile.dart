@@ -1,3 +1,6 @@
+import 'package:bonybom_app/core/constants/enums/locale_keys_enum.dart';
+import 'package:bonybom_app/core/init/cache/local_manager.dart';
+import 'package:bonybom_app/presentation/splash/view/splash.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/coustom_app_bar.dart';
@@ -364,7 +367,13 @@ class _editProfileState extends State<editProfile> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        LocalManager.instance.setBoolValue(PreferencesKeys.IS_LOGGEDIN, false);
+                        LocalManager.instance.setStringValue(PreferencesKeys.TOKEN, "");
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => SplashView()),
+                        );
+                      },
                       child: Container(
                         height: sw / 7,
                         padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
