@@ -1,3 +1,6 @@
+import 'package:bonybom_app/core/constants/app/app_constants.dart';
+import 'package:bonybom_app/core/init/lang/language_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -10,7 +13,14 @@ void main() async {
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(MyApp());
+  runApp(
+    EasyLocalization(
+      child: MyApp(),
+      supportedLocales: LanguageManager.instance.supportedLocales,
+      path: ApplicationConstants.LANG_ASSET_PATH,
+      startLocale: LanguageManager.instance.trLocale,
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +32,9 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       home: SplashView(),
     );
   }
