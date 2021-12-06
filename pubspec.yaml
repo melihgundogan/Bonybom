@@ -44,6 +44,7 @@ dependencies:
   hive_flutter: ^1.1.0
   path_provider: ^2.0.7
   freezed_annotation: ^1.0.0
+  easy_localization: ^3.0.0
   
 
 dev_dependencies:
@@ -64,6 +65,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/lang/
     - assets/images/
     - assets/icons/
     - assets/fonts/
