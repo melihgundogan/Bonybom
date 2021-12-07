@@ -28,13 +28,4 @@ class AuthModel {
     this.token,
     this.isLogin,
   });
-
-  AuthModel fromEntity(Auth auth) {
-    return AuthModel(
-      message: this.message,
-      categories: this.categories,
-      status: this.status,
-      token: this.token,
-    );
-  }
 }

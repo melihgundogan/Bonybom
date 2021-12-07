@@ -33,6 +33,10 @@ class AuthCubit extends Cubit<AuthState> {
       LocalManager.instance.setStringValue(PreferencesKeys.TOKEN, auth.token!);
       LocalManager.instance.setBoolValue(PreferencesKeys.IS_LOGGEDIN, true);
 
+      //TO-DO:
+      //
+      //
+
       return Authenticated();
     }));
   }
