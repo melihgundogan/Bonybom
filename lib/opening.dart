@@ -1,5 +1,8 @@
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/presentation/home/view/home_page.dart';
 import 'package:bonybom_app/source/theme.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class Opening extends StatelessWidget {
@@ -71,7 +74,7 @@ class Opening extends StatelessWidget {
                     width: ww(context, 262),
                     height: hh(context, 124),
                     child: Text(
-                      "Kendini Keşfetmeye Hazır Mısın?",
+                      LocaleKeys.opening_text.locale,
                       style: TextStyle(
                         fontFamily: "Gilroy",
                         fontSize: hh(context, 40),
@@ -97,7 +100,7 @@ class Opening extends StatelessWidget {
                   color: Clr.mainBlue,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(ww(context, 25))),
                   child: Text(
-                    "Haydi Başlayalım",
+                    LocaleKeys.let_is_start.locale,
                     style: TextStyle(
                       fontSize: hh(context, 15),
                       fontWeight: FontWeight.w400,

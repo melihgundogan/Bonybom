@@ -1,6 +1,9 @@
 import 'package:bonybom_app/core/constants/enums/locale_keys_enum.dart';
+import 'package:bonybom_app/core/extension/string_extension.dart';
 import 'package:bonybom_app/core/init/cache/local_manager.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/presentation/splash/view/splash.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/coustom_app_bar.dart';
@@ -95,7 +98,7 @@ class _editProfileState extends State<editProfile> {
                       child: Padding(
                         padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                         child: Text(
-                          "HESABIM",
+                          LocaleKeys.my_account.locale,
                           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                       ),
@@ -104,17 +107,17 @@ class _editProfileState extends State<editProfile> {
                       onTap: () => showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Ad Soyad'),
-                          content: const TextField(
+                          title: Text(LocaleKeys.name_surname.locale,),
+                          content: TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'Ad Soyad',
+                              labelText: LocaleKeys.name_surname.locale,
                             ),
                           ),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () => Text("lkjh"),
-                              child: const Text('Kaydet'),
+                              child: Text(LocaleKeys.save.locale,),
                             ),
                           ],
                         ),
@@ -127,7 +130,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Ad Soyad",
+                                LocaleKeys.name_surname.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -159,7 +162,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Doğum Tarihi",
+                                LocaleKeys.date_of_birth.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -175,17 +178,17 @@ class _editProfileState extends State<editProfile> {
                       onTap: () => showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Tel.No. '),
-                          content: const TextField(
+                          title: Text(LocaleKeys.phone_number.locale,),
+                          content: TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'Tel.No.',
+                              labelText: LocaleKeys.phone_number.locale,
                             ),
                           ),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () => Text("lkjh"),
-                              child: const Text('Kaydet'),
+                              child: Text(LocaleKeys.save.locale,),
                             ),
                           ],
                         ),
@@ -198,7 +201,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Cep Telefon Numarası",
+                                LocaleKeys.phone_number.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -214,17 +217,17 @@ class _editProfileState extends State<editProfile> {
                       onTap: () => showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('E-posta '),
-                          content: const TextField(
+                          title: Text(LocaleKeys.e_mail.locale,),
+                          content: TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'E-posta',
+                              labelText: LocaleKeys.e_mail.locale,
                             ),
                           ),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () => Text("lkjh"),
-                              child: const Text('Kaydet'),
+                              child: Text(LocaleKeys.save.locale,),
                             ),
                           ],
                         ),
@@ -237,7 +240,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "E-posta",
+                                LocaleKeys.e_mail.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -253,18 +256,18 @@ class _editProfileState extends State<editProfile> {
                       onTap: () => showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Şifre '),
-                          content: const TextField(
+                          title: Text(LocaleKeys.password.locale,),
+                          content: TextField(
                             obscureText: true,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'Şifre',
+                              labelText: LocaleKeys.password.locale,
                             ),
                           ),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () => Text("lkjh"),
-                              child: const Text('Kaydet'),
+                              child: Text(LocaleKeys.save.locale,),
                             ),
                           ],
                         ),
@@ -277,7 +280,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Şifre",
+                                LocaleKeys.password.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -301,7 +304,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Konum",
+                                LocaleKeys.location.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -319,7 +322,7 @@ class _editProfileState extends State<editProfile> {
                       child: Padding(
                         padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                         child: Text(
-                          "HESAP İŞLEMLERİ",
+                          LocaleKeys.account_transactions.locale,
                           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                       ),
@@ -336,7 +339,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Önbelleği Temizle",
+                                LocaleKeys.clear_cache.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -354,7 +357,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Bize Ulaşın",
+                                LocaleKeys.contact_us.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -382,7 +385,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Oturumu Kapat",
+                                LocaleKeys.sign_out.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -404,7 +407,7 @@ class _editProfileState extends State<editProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Hesabı Sil",
+                                LocaleKeys.delete_account.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),

@@ -1,6 +1,9 @@
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/screens/profile/info.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/theme.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -94,7 +97,7 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: hh(context, 6)),
                   Text(
-                    "Tekrar Hoşgeldin!",
+                    LocaleKeys.welcome_again.locale,
                     style: TextStyle(
                       fontSize: hh(context, 18),
                       fontWeight: FontWeight.w700,
@@ -104,7 +107,7 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: hh(context, 6)),
                   Text(
-                    "Lütfen bilgilerinizi giriniz",
+                    LocaleKeys.please_enter_your_information.locale,
                     style: TextStyle(
                       fontSize: hh(context, 12),
                       fontWeight: FontWeight.w500,
@@ -115,7 +118,7 @@ class _LoginState extends State<Login> {
                   SizedBox(height: hh(context, 84)),
                   authInput(context, s, hintText: "Email"),
                   SizedBox(height: hh(context, 15)),
-                  authInput(context, s, hintText: "Şifre", isSecure: true),
+                  authInput(context, s, hintText: LocaleKeys.password.locale, isSecure: true),
                   Container(
                     width: s.width,
                     alignment: Alignment.centerRight,
@@ -123,7 +126,7 @@ class _LoginState extends State<Login> {
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
-                        "Şifremi Unuttum?",
+                        LocaleKeys.forgot_my_password.locale,
                         style: TextStyle(
                           fontSize: hh(context, 12),
                           fontWeight: FontWeight.w500,
@@ -143,7 +146,7 @@ class _LoginState extends State<Login> {
                     },
                     bgColor: Clr.mainBlue,
                     child: Text(
-                      "Kayıt Ol",
+                      LocaleKeys.register.locale,
                       style: TextStyle(
                         fontSize: hh(context, 14),
                         fontWeight: FontWeight.w600,
@@ -167,7 +170,7 @@ class _LoginState extends State<Login> {
                         ),
                         SizedBox(width: ww(context, 6)),
                         Text(
-                          "Google ile Devam Et",
+                          LocaleKeys.continue_with_google.locale,
                           style: TextStyle(
                             fontSize: hh(context, 14),
                             fontWeight: FontWeight.w600,
@@ -182,7 +185,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Hesabın yok mu?  ",
+                        LocaleKeys.do_not_have_an_account.locale,
                         style: TextStyle(
                           fontSize: hh(context, 12),
                           fontWeight: FontWeight.w500,
@@ -196,7 +199,7 @@ class _LoginState extends State<Login> {
                           state.changeLogin();
                         },
                         child: Text(
-                          "Şimdi Kaydol",
+                          LocaleKeys.register_now.locale,
                           style: TextStyle(
                             fontSize: hh(context, 12),
                             fontWeight: FontWeight.w700,

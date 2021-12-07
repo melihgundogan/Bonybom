@@ -1,4 +1,49 @@
 {
+  "opening_text": "Are you ready to discover yourself?",
+  "let_is_start": "Let's Start",
+  "create_new_account": "Create New Account",
+  "fill_out_form": "Please fill out the form to continue",
+  "name_surname": "Name Surname",
+  "register": "Register",
+  "do_you_have_an_account": "Do you have an account?",
   "login": "Login",
-  "welcome": "Welcome"
+  "welcome_again": "Welcome Again!",
+  "please_enter_your_information": "Please enter your information",
+  "password": "Password",
+  "forgot_my_password": "I Forgot My Password?",
+  "continue_with_google": "Continue with Google",
+  "register_now": "Register Now",
+  "do_not_have_an_account": "Don't have an account?",
+  "date_of_birth": "Date of Birth",
+  "choose_city": "Choose Location",
+  "gender": "Gender",
+  "information_text": "In order for us to offer suggestions specific to your age and location, you need to make the following adjustments",
+  "setting": "SETTINGS",
+  "edit_profile": "Edit Profile",
+  "notifications": "Notifications",
+  "edit_categories": "Edit Categories",
+  "dark_mode": "Dark Mode",
+  "share_bonybom_friend": "Share bonybom with your friends",
+  "contact_us": "Contact us",
+  "about_bonybom": "About Bonybom",
+  "privacy_policy": "Privacy Policy",
+  "terms_of_use": "Terms of Use",
+  "my_account": "My Account",
+  "phone_number": "Phone Number",
+  "e_mail": "E-Mail",
+  "location": "Location",
+  "account_transactions": "Account Transactions",
+  "delete_account": "Delete the Account",
+  "sign_out": "Sign Out",
+  "saved": "Saved",
+  "favorites": "Favorites",
+  "category_choose_information": "Choose at least 4 and at most 8 categories below so that we can get to know you better and make special suggestions for you",
+  "save": "Save",
+  "clear_cache": "Clear Cache"
+
+
+
+
+
+  
 }

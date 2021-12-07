@@ -1,9 +1,13 @@
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/widgets.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -92,7 +96,7 @@ class _RegisterState extends State<Register> {
                   ),
                   SizedBox(height: hh(context, 6)),
                   Text(
-                    "Yeni Hesap Oluştur",
+                    LocaleKeys.create_new_account.locale,
                     style: TextStyle(
                       fontSize: hh(context, 18),
                       fontWeight: FontWeight.w700,
@@ -102,7 +106,7 @@ class _RegisterState extends State<Register> {
                   ),
                   SizedBox(height: hh(context, 6)),
                   Text(
-                    "Lütfen bilgilerinizi giriniz",
+                    LocaleKeys.fill_out_form.locale,
                     style: TextStyle(
                       fontSize: hh(context, 12),
                       fontWeight: FontWeight.w500,
@@ -113,9 +117,9 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: hh(context, 59)),
                   authInput(context, s, hintText: "Email"),
                   SizedBox(height: hh(context, 15)),
-                  authInput(context, s, hintText: "Kullanıcı Adı"),
+                  authInput(context, s, hintText: LocaleKeys.name_surname.locale,),
                   SizedBox(height: hh(context, 15)),
-                  authInput(context, s, hintText: "Şifre", isSecure: true),
+                  authInput(context, s, hintText: LocaleKeys.password.locale, isSecure: true),
                   SizedBox(height: hh(context, 64)),
                   authButton(
                     context,
@@ -123,7 +127,7 @@ class _RegisterState extends State<Register> {
                     onPressed: () {},
                     bgColor: Clr.mainBlue,
                     child: Text(
-                      "Kayıt Ol",
+                      LocaleKeys.register_now.locale,
                       style: TextStyle(
                         fontSize: hh(context, 14),
                         fontWeight: FontWeight.w600,
@@ -147,7 +151,7 @@ class _RegisterState extends State<Register> {
                         ),
                         SizedBox(width: ww(context, 6)),
                         Text(
-                          "Google ile Devam Et",
+                          LocaleKeys.continue_with_google.locale,
                           style: TextStyle(
                             fontSize: hh(context, 14),
                             fontWeight: FontWeight.w600,
@@ -162,7 +166,7 @@ class _RegisterState extends State<Register> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Bir hesabın var mı?  ",
+                        LocaleKeys.do_you_have_an_account.locale,
                         style: TextStyle(
                           fontSize: hh(context, 12),
                           fontWeight: FontWeight.w500,
@@ -176,7 +180,7 @@ class _RegisterState extends State<Register> {
                           state.changeLogin();
                         },
                         child: Text(
-                          "Giriş Yap",
+                          LocaleKeys.login.locale,
                           style: TextStyle(
                             fontSize: hh(context, 12),
                             fontWeight: FontWeight.w700,
