@@ -1,8 +1,11 @@
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/models/category_model.dart';
 import 'package:bonybom_app/presentation/home/view/home_page.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:bonybom_app/source/theme.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -62,7 +65,7 @@ class _CategorySelectState extends State<CategorySelect> {
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: ww(context, 32)),
                           child: Text(
-                            "Seni daha iyi tanıyabilmemiz ve sana özel önerilerde bulunabilmemiz için aşağıdan en az 4 kategori seç.",
+                            LocaleKeys.information_text.locale,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: hh(context, 17),

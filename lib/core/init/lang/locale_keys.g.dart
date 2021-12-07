@@ -33,12 +33,14 @@ abstract class  LocaleKeys {
   static const my_account = 'my_account';
   static const phone_number = 'phone_number';
   static const e_mail = 'e_mail';
-  static const city = 'city';
+  static const location = 'location';
   static const account_transactions = 'account_transactions';
   static const delete_account = 'delete_account';
   static const sign_out = 'sign_out';
   static const saved = 'saved';
   static const favorites = 'favorites';
   static const category_choose_information = 'category_choose_information';
+  static const save = 'save';
+  static const clear_cache = 'clear_cache';
 
 }

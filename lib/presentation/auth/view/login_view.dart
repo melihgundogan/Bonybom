@@ -135,7 +135,7 @@ class LoginView extends StatelessWidget {
             ),
             SizedBox(height: hh(context, 6)),
             Text(
-              "Tekrar Hoşgeldin!",
+              LocaleKeys.welcome_again.locale,
               style: TextStyle(
                 fontSize: hh(context, 18),
                 fontWeight: FontWeight.w700,
@@ -145,7 +145,7 @@ class LoginView extends StatelessWidget {
             ),
             SizedBox(height: hh(context, 6)),
             Text(
-              "Lütfen bilgilerinizi giriniz",
+              LocaleKeys.please_enter_your_information.locale,
               style: TextStyle(
                 fontSize: hh(context, 12),
                 fontWeight: FontWeight.w500,
@@ -160,7 +160,7 @@ class LoginView extends StatelessWidget {
               controller: emailController,
             ),
             SizedBox(height: hh(context, 15)),
-            AuthInput(s: s, hintText: "Şifre", isSecure: true, controller: passwordController),
+            AuthInput(s: s, hintText: LocaleKeys.password.locale, isSecure: true, controller: passwordController),
             Container(
               width: s.width,
               alignment: Alignment.centerRight,
@@ -168,7 +168,7 @@ class LoginView extends StatelessWidget {
               child: TextButton(
                 onPressed: () {},
                 child: Text(
-                  "Şifremi Unuttum?",
+                  LocaleKeys.forgot_my_password.locale,
                   style: TextStyle(
                     fontSize: hh(context, 12),
                     fontWeight: FontWeight.w500,
@@ -209,7 +209,7 @@ class LoginView extends StatelessWidget {
                   ),
                   SizedBox(width: ww(context, 6)),
                   Text(
-                    "Google ile Devam Et",
+                    LocaleKeys.continue_with_google.locale,
                     style: TextStyle(
                       fontSize: hh(context, 14),
                       fontWeight: FontWeight.w600,
@@ -224,7 +224,7 @@ class LoginView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Hesabın yok mu?  ",
+                 LocaleKeys.do_not_have_an_account.locale,
                   style: TextStyle(
                     fontSize: hh(context, 12),
                     fontWeight: FontWeight.w500,
@@ -234,7 +234,7 @@ class LoginView extends StatelessWidget {
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    "Şimdi Kaydol",
+                    LocaleKeys.register_now.locale,
                     style: TextStyle(
                       fontSize: hh(context, 12),
                       fontWeight: FontWeight.w700,

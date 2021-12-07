@@ -1,8 +1,11 @@
 import 'package:bonybom_app/components/coustom_app_bar.dart';
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/notification/favorites.dart';
 import 'package:bonybom_app/screens/notification/recorded.dart';
 import 'package:bonybom_app/source/icons.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -66,14 +69,14 @@ class _NotificationPageState extends State<NotificationPage>
                     labelColor: Colors.black,
                     tabs: [
                       Tab(
-                        child: const Text(
-                          "Kaydedilenler",
+                        child: Text(
+                          LocaleKeys.saved.locale,
                           textAlign: TextAlign.center,
                         ),
                       ),
                       Tab(
-                        child: const Text(
-                          "Beğenilenler",
+                        child: Text(
+                          LocaleKeys.favorites.locale,
                           textAlign: TextAlign.center,
                         ),
                       ),

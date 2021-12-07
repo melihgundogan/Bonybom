@@ -1,9 +1,12 @@
 import 'package:bonybom_app/components/coustom_app_bar.dart';
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/enums.dart';
 import 'package:bonybom_app/screens/category/other_categorys.dart';
 import 'package:bonybom_app/screens/profile/editprofile.dart';
 import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/source/icons.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class userPage extends StatefulWidget {
@@ -85,7 +88,7 @@ class _userPageState extends State<userPage> {
                       child: Padding(
                         padding: EdgeInsets.only(left: sw / 20, top: sw / 40),
                         child: Text(
-                          "AYARLAR",
+                          LocaleKeys.setting.locale,
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.black),
                         ),
@@ -107,7 +110,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Profili Düzenle",
+                                LocaleKeys.edit_profile.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -136,7 +139,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Bildirimler",
+                               LocaleKeys.notifications.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -165,7 +168,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Kategorileri Düzenle",
+                                LocaleKeys.edit_categories.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -190,7 +193,7 @@ class _userPageState extends State<userPage> {
                           Padding(
                             padding: EdgeInsets.only(left: sw / 45),
                             child: Text(
-                              "Karanlık Mod",
+                              LocaleKeys.dark_mode.locale,
                               style: TextStyle(fontSize: sw / 20),
                             ),
                           ),
@@ -236,7 +239,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Bonybom'u Arkadaşlarınla Paylaş",
+                                LocaleKeys.share_bonybom_friend.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -258,7 +261,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Bize Ulaşın",
+                                LocaleKeys.contact_us.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -286,7 +289,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Bonybom Hakkında",
+                                LocaleKeys.about_bonybom.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -313,7 +316,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Gizlilik Politikası",
+                                LocaleKeys.privacy_policy.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),
@@ -340,7 +343,7 @@ class _userPageState extends State<userPage> {
                             Padding(
                               padding: EdgeInsets.only(left: sw / 45),
                               child: Text(
-                                "Kullanım Koşulları",
+                                LocaleKeys.terms_of_use.locale,
                                 style: TextStyle(fontSize: sw / 20),
                               ),
                             ),

@@ -15,7 +15,7 @@
   "register_now": "Şimdi Kaydol",
   "do_not_have_an_account": "Hesabın yok mu?",
   "date_of_birth": "Doğum Tarihi",
-  "choose_city": "Şehir Seç",
+  "choose_city": "Konum Seç",
   "gender": "Cinsiyet",
   "information_text": "Yaşına ve bulunduğun yere özel öneriler sunabilmemiz için aşağıda ki ayarlamaları yapman gerekli",
   "setting": "AYARLAR",
@@ -31,12 +31,13 @@
   "my_account": "HESABIM",
   "phone_number": "Cep Telefon Numarası",
   "e_mail": "E-Mail",
-  "city": "Şehir",
+  "location": "Konum",
   "account_transactions": "HESAP İŞLEMLERİ",
   "delete_account": "Hesabı Sil",
   "sign_out": "Oturumu Kapat",
   "saved": "Kaydedilenler",
   "favorites": "Beğenilenler",
-  "category_choose_information": "Seni daha iyi tanıyabilmemiz ve sana özel önerilerde bulunabilmemiz için aşağıdan en az 4 en fazla 8 kategori seç"
-
+  "category_choose_information": "Seni daha iyi tanıyabilmemiz ve sana özel önerilerde bulunabilmemiz için aşağıdan en az 4 en fazla 8 kategori seç",
+  "save": "Kaydet",
+  "clear_cache": "Önbelleği Temizle"
 }

@@ -1,5 +1,8 @@
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/theme.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ionicons/ionicons.dart';
@@ -60,7 +63,7 @@ class _InfoState extends State<Info> {
                           right: s.width / 50,
                           left: s.width / 50),
                       child: Text(
-                        "Yaşına ve bulunduğun yere özel öneriler sunabilmemiz için aşağıdaki ayarlamaları yapman gerekli",
+                        LocaleKeys.information_text.locale,
                         style: TextStyle(
                           fontStyle: FontStyle.normal,
                           fontSize: 16,
@@ -93,7 +96,7 @@ class _InfoState extends State<Info> {
                             SizedBox(width: ww(context, 12)),
                             Expanded(
                               child: Text(
-                                "Doğum Tarihi",
+                                LocaleKeys.date_of_birth.locale,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: hh(context, 18),
@@ -131,7 +134,7 @@ class _InfoState extends State<Info> {
                             SizedBox(width: ww(context, 12)),
                             Expanded(
                               child: Text(
-                                "Konum Seç",
+                                LocaleKeys.choose_city.locale,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: hh(context, 18),
@@ -169,7 +172,7 @@ class _InfoState extends State<Info> {
                             SizedBox(width: ww(context, 12)),
                             Expanded(
                               child: Text(
-                                "Cinsiyet Seç",
+                                LocaleKeys.gender.locale,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: hh(context, 18),
