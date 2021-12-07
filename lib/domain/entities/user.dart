@@ -10,18 +10,17 @@ class User extends Equatable {
   final String? dob;
   final List<int>? categories;
 
-  User(
-    this.firstName,
-    this.lastName,
-    this.email,
-    this.password,
-    this.locationId,
-    this.gender,
-    this.dob,
-    this.categories,
-  );
+  User({
+    required this.firstName,
+    required this.lastName,
+    required this.email,
+    required this.password,
+    required this.locationId,
+    required this.gender,
+    required this.dob,
+    required this.categories,
+  });
 
   @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [firstName, lastName, email, password, locationId, gender, dob, categories];
 }

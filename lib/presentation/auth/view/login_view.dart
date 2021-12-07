@@ -48,12 +48,14 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  Container initialBodyBuild(Size s, BuildContext context) {
-    return Container(
-      width: s.width,
-      height: s.height,
-      color: Clr.black,
-      child: buildStack(s, context),
+  Widget initialBodyBuild(Size s, BuildContext context) {
+    return Scaffold(
+      body: Container(
+        width: s.width,
+        height: s.height,
+        color: Clr.black,
+        child: buildStack(s, context),
+      ),
     );
   }
 
