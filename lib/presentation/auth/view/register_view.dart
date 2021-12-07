@@ -1,3 +1,5 @@
+import 'package:bonybom_app/core/constants/navigation/navigation_constants.dart';
+import 'package:bonybom_app/core/init/navigation/navigation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -170,7 +172,9 @@ class RegisterView extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            NavigationService.instance.navigateToPage(path: NavigationConstants.LOGIN);
+                          },
                           child: Text(
                             LocaleKeys.login.locale,
                             style: TextStyle(
