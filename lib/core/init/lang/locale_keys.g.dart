@@ -42,5 +42,6 @@ abstract class  LocaleKeys {
   static const category_choose_information = 'category_choose_information';
   static const save = 'save';
   static const clear_cache = 'clear_cache';
+  static const navigation_not_found = 'navigation_not_found';
 
 }
