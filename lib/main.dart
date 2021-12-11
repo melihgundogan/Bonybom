@@ -1,3 +1,4 @@
+import 'package:bonybom_app/auth.dart';
 import 'package:bonybom_app/dark_light.dart';
 import 'package:bonybom_app/opening.dart';
 import 'package:bonybom_app/screens/category/category_select.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
-      home: HomePage(),
+      home: Auth(),
     );
   }
 }
