@@ -16,6 +16,21 @@ class Register extends StatefulWidget {
   _RegisterState createState() => _RegisterState();
 }
 
+Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.red;
+      }
+      return Colors.blue;
+    }
+
+bool isChecked1 = false;
+bool isChecked2 = false;
+
 class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
@@ -121,6 +136,92 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: hh(context, 15)),
                   authInput(context, s, hintText: LocaleKeys.password.locale, isSecure: true),
                   SizedBox(height: hh(context, 64)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Checkbox(
+                      checkColor: Colors.white,
+                        fillColor: MaterialStateProperty.resolveWith(getColor),
+                        value: isChecked1,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked1 = value!;
+                          });},),
+                      Row(
+                      children: [
+                      TextButton(
+                        onPressed: () {
+                          Future<String> loadAsset() async {
+                            return await DefaultAssetBundle.of(context).loadString('assets/bonybom_kulllanm_kosullar.txt');
+                        }
+                        },
+                        child: Text(
+                          LocaleKeys.user_agreement.locale,
+                          style: TextStyle(
+                            fontSize: hh(context, 12),
+                            fontWeight: FontWeight.w700,
+                            color: Clr.mainBlue,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        LocaleKeys.approve.locale,
+                        style: TextStyle(
+                          fontSize: hh(context, 12),
+                          fontWeight: FontWeight.w500,
+                          color: Clr.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: s.width/9,left: s.width/11.5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Checkbox(
+                        checkColor: Colors.white,
+                          fillColor: MaterialStateProperty.resolveWith(getColor),
+                          value: isChecked2,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                isChecked2 = value!;
+                            });},),
+                        Row(
+                        children: [
+                        TextButton(
+                          onPressed: () {
+                            Future<String> loadAsset() async {
+                              return await DefaultAssetBundle.of(context).loadString('assets/bonybom_gizlilik_sozlesmesi.txt');
+                            }
+                          },
+                          child: Text(
+                            LocaleKeys.privacy_policy.locale,
+                            style: TextStyle(
+                              fontSize: hh(context, 12),
+                              fontWeight: FontWeight.w700,
+                              color: Clr.mainBlue,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                        
+                        Text(
+                          LocaleKeys.approve.locale,
+                          style: TextStyle(
+                            fontSize: hh(context, 12),
+                            fontWeight: FontWeight.w500,
+                            color: Clr.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                      ],
+                    ),
+                  ),
                   authButton(
                     context,
                     s,
