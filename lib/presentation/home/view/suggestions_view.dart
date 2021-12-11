@@ -1,7 +1,11 @@
+import 'package:bonybom_app/core/extension/string_extension.dart';
+import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:bonybom_app/domain/entities/suggestion.dart';
 import 'package:bonybom_app/source/icons.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:swipe/swipe.dart';
 
 class SuggestionsView extends StatelessWidget {
@@ -85,7 +89,10 @@ class SuggestionsView extends StatelessWidget {
                         color: Colors.black,
                         width: 3,
                       ),
-                      GestureDetector(onTap: () {}, child: SizedBox(height: s.width / 13, child: _svgIcon.diamond)),
+                      GestureDetector(onTap: () {
+                        Fluttertoast.showToast(msg: LocaleKeys.coming_soon.locale);
+                      }, 
+                      child: SizedBox(height: s.width / 13, child: _svgIcon.diamond)),
                     ],
                   ),
                 ),

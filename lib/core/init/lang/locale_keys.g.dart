@@ -45,5 +45,6 @@ abstract class  LocaleKeys {
   static const user_agreement = 'user_agreement';
   static const approve = 'approve';
   static const navigation_not_found = 'navigation_not_found';
+  static const coming_soon = 'coming_soon';
 
 }
