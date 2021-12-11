@@ -4,6 +4,8 @@ import 'package:bonybom_app/screens/profile/userpage.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:swipe/swipe.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -122,7 +124,11 @@ class _HomePageState extends State<HomePage> {
                             width: 3,
                           ),
                           GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                setState(() {
+                                  Fluttertoast.showToast(msg: "Coming Soon");
+                                });
+                              },
                               child: SizedBox(
                                   height: s.width / 13,
                                   child: _svgIcon.diamond)),
@@ -135,6 +141,17 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void _showToast(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: const Text('Added to favorite'),
+        action: SnackBarAction(
+            label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }
