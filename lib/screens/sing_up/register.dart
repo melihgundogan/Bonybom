@@ -1,18 +1,41 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:bonybom_app/widgets.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
 
+  
   @override
   _RegisterState createState() => _RegisterState();
 }
-
+bool isChecked1 = false;
+bool isChecked2 = false;
 class _RegisterState extends State<Register> {
+  
+Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.red;
+      }
+      return Colors.blue;
+    }
+
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
@@ -113,10 +136,96 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: hh(context, 59)),
                   authInput(context, s, hintText: "Email"),
                   SizedBox(height: hh(context, 15)),
-                  authInput(context, s, hintText: "Kullanıcı Adı"),
+                  authInput(context, s, hintText: "Ad Soyad"),
                   SizedBox(height: hh(context, 15)),
                   authInput(context, s, hintText: "Şifre", isSecure: true),
-                  SizedBox(height: hh(context, 64)),
+                  //SizedBox(height: hh(context, 15)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Checkbox(
+                      checkColor: Colors.white,
+                        fillColor: MaterialStateProperty.resolveWith(getColor),
+                        value: isChecked1,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked1 = value!;
+                          });},),
+                      Row(
+                      children: [
+                      TextButton(
+                        onPressed: () {
+                          Future<String> loadAsset() async {
+                            return await DefaultAssetBundle.of(context).loadString('assets/bonybom_kulllanm_kosullar.txt');
+                        }
+                        },
+                        child: Text(
+                          "Kullanıcı Sözleşmesini",
+                          style: TextStyle(
+                            fontSize: hh(context, 12),
+                            fontWeight: FontWeight.w700,
+                            color: Clr.mainBlue,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "okudum,onayladım.",
+                        style: TextStyle(
+                          fontSize: hh(context, 12),
+                          fontWeight: FontWeight.w500,
+                          color: Clr.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: s.width/9,left: s.width/11.5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Checkbox(
+                        checkColor: Colors.white,
+                          fillColor: MaterialStateProperty.resolveWith(getColor),
+                          value: isChecked2,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                isChecked2 = value!;
+                            });},),
+                        Row(
+                        children: [
+                        TextButton(
+                          onPressed: () {
+                            Future<String> loadAsset() async {
+                              return await DefaultAssetBundle.of(context).loadString('assets/bonybom_gizlilik_sozlesmesi.txt');
+                            }
+                          },
+                          child: Text(
+                            "Gizlilik Sözleşmesini",
+                            style: TextStyle(
+                              fontSize: hh(context, 12),
+                              fontWeight: FontWeight.w700,
+                              color: Clr.mainBlue,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                        
+                        Text(
+                          "okudum,onayladım.",
+                          style: TextStyle(
+                            fontSize: hh(context, 12),
+                            fontWeight: FontWeight.w500,
+                            color: Clr.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                      ],
+                    ),
+                  ),
                   authButton(
                     context,
                     s,
