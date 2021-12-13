@@ -2,6 +2,7 @@ import 'package:bonybom_app/models/theme_model.dart';
 import 'package:bonybom_app/auth.dart';
 import 'package:bonybom_app/dark_light.dart';
 import 'package:bonybom_app/opening.dart';
+import 'package:bonybom_app/screens/profile/country_choose.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: themeNotifier.isDark ? ThemeData.dark() : ThemeData.light(),
-            home: Opening(),
+            home: CountryChoose(),
           );
         }));
   }
