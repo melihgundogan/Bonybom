@@ -14,6 +14,7 @@ class _CountryChooseState extends State<CountryChoose> {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController editingController = TextEditingController();
     List countries = CountryNotifier().countries;
     final s = MediaQuery.of(context).size;
     return MaterialApp(
@@ -45,6 +46,31 @@ class _CountryChooseState extends State<CountryChoose> {
                   width: ww(context, 90.0),
                   height: hh(context, 110.0),
                 ),
+              ),
+              TextField(
+                onChanged: (value) {},
+                controller: editingController,
+                decoration: InputDecoration(
+                    labelText: "Search",
+                    hintText: "Search",
+                    prefixIcon: Icon(Icons.search),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(25.0)))),
+              ),
+              Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: countries == null ? 0 : countries.length,
+                      itemBuilder: (BuildContext context, int indeks) {
+                        return new Card(
+                          child: new Text(countries[indeks]["name"]),
+                        );
+                      },
+                    ),
+                  )
+                ],
               ),
             ],
           ),
