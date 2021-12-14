@@ -36,6 +36,7 @@ Widget authInput(
   required String hintText,
   TextEditingController? controller,
   bool isSecure = false,
+  String? textInputAction,
 }) =>
     Container(
       width: s.width,
@@ -45,6 +46,7 @@ Widget authInput(
         child: Stack(
           children: [
             TextField(
+              textInputAction: TextInputAction.next,
               obscureText: isSecure,
               style: TextStyle(
                 color: Clr.white,

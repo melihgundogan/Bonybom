@@ -129,7 +129,7 @@ class _CategorySelectState extends State<CategorySelect> {
   }
 }
 
-class CategoryWidget extends StatelessWidget {
+class CategoryWidget extends StatefulWidget {
   const CategoryWidget({
     Key? key,
     required this.s,
@@ -138,7 +138,25 @@ class CategoryWidget extends StatelessWidget {
 
   final Size s;
   final CategoryModel item;
+
+  @override
+  State<CategoryWidget> createState() => _CategoryWidgetState();
+}
+bool isChecked1 = false;
+class _CategoryWidgetState extends State<CategoryWidget> {
   final String baseUrl = "https://bonybom.com/admin/";
+
+Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.red;
+      }
+      return Colors.blue;
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -148,13 +166,13 @@ class CategoryWidget extends StatelessWidget {
         padding: EdgeInsets.all(0),
         onPressed: () {},
         child: Container(
-          width: (s.width - ww(context, 92)) / 3,
-          height: ((s.width - ww(context, 92)) / 3) * 4 / 3,
+          width: (widget.s.width - ww(context, 92)) / 3,
+          height: ((widget.s.width - ww(context, 92)) / 3) * 4 / 3,
           child: Stack(
             children: [
               Container(
-                width: (s.width - ww(context, 92)) / 3,
-                height: ((s.width - ww(context, 92)) / 3) * 4 / 3,
+                width: (widget.s.width - ww(context, 92)) / 3,
+                height: ((widget.s.width - ww(context, 92)) / 3) * 4 / 3,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -170,14 +188,14 @@ class CategoryWidget extends StatelessWidget {
                 bottom: 0,
                 left: 0,
                 child: Container(
-                  width: (s.width - ww(context, 92)) / 3,
+                  width: (widget.s.width - ww(context, 92)) / 3,
                   padding: EdgeInsets.only(
                     left: ww(context, 10),
                     right: ww(context, 10),
                     bottom: ww(context, 10),
                   ),
                   child: Text(
-                    item.title_tr,
+                    widget.item.title_tr,
                     style: TextStyle(
                       fontSize: hh(context, 11),
                       fontWeight: FontWeight.w600,
@@ -187,14 +205,22 @@ class CategoryWidget extends StatelessWidget {
                   ),
                 ),
               ),
+               Checkbox(
+                      checkColor: Colors.white,
+                        fillColor: MaterialStateProperty.resolveWith(getColor),
+                        value: isChecked1,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked1 = value!;
+                          });},),
             ],
           ),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: item.image == null
+              image: widget.item.image == null
                   ? NetworkImage("")
                   : NetworkImage(
-                      baseUrl + item.image,
+                      baseUrl + widget.item.image,
                     ),
               fit: BoxFit.cover,
             ),

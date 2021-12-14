@@ -138,7 +138,7 @@ Color getColor(Set<MaterialState> states) {
                   SizedBox(height: hh(context, 15)),
                   authInput(context, s, hintText: "Ad Soyad"),
                   SizedBox(height: hh(context, 15)),
-                  authInput(context, s, hintText: "Şifre", isSecure: true),
+                  authInput(context, s, hintText: "Şifre", isSecure: false),
                   //SizedBox(height: hh(context, 15)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
