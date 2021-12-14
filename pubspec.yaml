@@ -31,6 +31,7 @@ dependencies:
   google_fonts: ^2.1.0
   swipe: ^0.0.1
   parse_server_sdk_flutter: ^3.1.0
+  shared_preferences: ^2.0.9
   fluttertoast: ^8.0.8
 
 dev_dependencies:
