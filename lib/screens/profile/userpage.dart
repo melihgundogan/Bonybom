@@ -8,6 +8,7 @@ import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:bonybom_app/source/icons.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class userPage extends StatefulWidget {
   @override
@@ -303,7 +304,11 @@ class _userPageState extends State<userPage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () async {
+                        final url =
+                          "https://bonybom.com/privacy_policy.html";
+                        openBrowserURL(url: url, inApp: true);
+                      },
                       child: Container(
                         height: sw / 7,
                         padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
@@ -330,7 +335,11 @@ class _userPageState extends State<userPage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () async {
+                        final url =
+                          "https://bonybom.com/terms_of_use.html";
+                        openBrowserURL(url: url, inApp: true);
+                      },
                       child: Container(
                         height: sw / 7,
                         padding: EdgeInsets.only(left: sw / 30, right: sw / 40),
@@ -364,5 +373,15 @@ class _userPageState extends State<userPage> {
         ),
       ),
     );
+  }
+
+  Future openBrowserURL({
+    required String url,
+    bool inApp = false,
+  }) async {
+    if (await canLaunch(url)) {
+      await launch(url,
+          forceSafariVC: inApp, forceWebView: inApp, enableJavaScript: true);
+    }
   }
 }

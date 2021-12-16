@@ -21,7 +21,7 @@ void main() async {
       child: MyApp(),
       supportedLocales: LanguageManager.instance.supportedLocales,
       path: ApplicationConstants.LANG_ASSET_PATH,
-      startLocale: LanguageManager.instance.enLocale,
+      startLocale: LanguageManager.instance.trLocale,
     ),
   );
 }

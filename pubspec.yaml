@@ -47,6 +47,7 @@ dependencies:
   easy_localization: ^3.0.0
 
   fluttertoast: ^8.0.8
+  url_launcher: ^6.0.17
   
 
 dev_dependencies:

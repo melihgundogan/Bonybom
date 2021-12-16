@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:bonybom_app/core/extension/string_extension.dart';
 import 'package:bonybom_app/core/init/lang/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -150,10 +152,10 @@ class _RegisterState extends State<Register> {
                       Row(
                       children: [
                       TextButton(
-                        onPressed: () {
-                          Future<String> loadAsset() async {
-                            return await DefaultAssetBundle.of(context).loadString('assets/bonybom_kulllanm_kosullar.txt');
-                        }
+                        onPressed: () async {
+                          final url =
+                            "https://bonybom.com/terms_of_use.html";
+                          openBrowserURL(url: url, inApp: true);
                         },
                         child: Text(
                           LocaleKeys.user_agreement.locale,
@@ -193,10 +195,10 @@ class _RegisterState extends State<Register> {
                         Row(
                         children: [
                         TextButton(
-                          onPressed: () {
-                            Future<String> loadAsset() async {
-                              return await DefaultAssetBundle.of(context).loadString('assets/bonybom_gizlilik_sozlesmesi.txt');
-                            }
+                          onPressed: () async {
+                            final url =
+                              "https://bonybom.com/privacy_policy.html";
+                            openBrowserURL(url: url, inApp: true);
                           },
                           child: Text(
                             LocaleKeys.privacy_policy.locale,
@@ -299,5 +301,15 @@ class _RegisterState extends State<Register> {
         ],
       ),
     );
+  }
+
+  Future openBrowserURL({
+    required String url,
+    bool inApp = false,
+  }) async {
+    if (await canLaunch(url)) {
+      await launch(url,
+          forceSafariVC: inApp, forceWebView: inApp, enableJavaScript: true);
+    }
   }
 }
