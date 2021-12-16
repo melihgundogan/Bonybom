@@ -12,29 +12,30 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:url_launcher/url_launcher.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
 
-  
   @override
   _RegisterState createState() => _RegisterState();
 }
+
 bool isChecked1 = false;
 bool isChecked2 = false;
+
 class _RegisterState extends State<Register> {
-  
-Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      if (states.any(interactiveStates.contains)) {
-        return Colors.red;
-      }
-      return Colors.blue;
+  Color getColor(Set<MaterialState> states) {
+    const Set<MaterialState> interactiveStates = <MaterialState>{
+      MaterialState.pressed,
+      MaterialState.hovered,
+      MaterialState.focused,
+    };
+    if (states.any(interactiveStates.contains)) {
+      return Colors.red;
     }
+    return Colors.blue;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,85 +145,93 @@ Color getColor(Set<MaterialState> states) {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Checkbox(
-                      checkColor: Colors.white,
+                        checkColor: Colors.white,
                         fillColor: MaterialStateProperty.resolveWith(getColor),
                         value: isChecked1,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              isChecked1 = value!;
-                          });},),
-                      Row(
-                      children: [
-                      TextButton(
-                        onPressed: () {
-                          Future<String> loadAsset() async {
-                            return await DefaultAssetBundle.of(context).loadString('assets/bonybom_kulllanm_kosullar.txt');
-                        }
+                        onChanged: (bool? value) {
+                          setState(() {
+                            isChecked1 = value!;
+                          });
                         },
-                        child: Text(
-                          "Kullanıcı Sözleşmesini",
-                          style: TextStyle(
-                            fontSize: hh(context, 12),
-                            fontWeight: FontWeight.w700,
-                            color: Clr.mainBlue,
-                            letterSpacing: 1,
+                      ),
+                      Row(
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              Future<String> loadAsset() async {
+                                return await DefaultAssetBundle.of(context)
+                                    .loadString(
+                                        'assets/bonybom_kulllanm_kosullar.txt');
+                              }
+                            },
+                            child: Text(
+                              "Kullanıcı Sözleşmesini",
+                              style: TextStyle(
+                                fontSize: hh(context, 12),
+                                fontWeight: FontWeight.w700,
+                                color: Clr.mainBlue,
+                                letterSpacing: 1,
+                              ),
+                            ),
                           ),
-                        ),
+                          Text(
+                            "okudum,onayladım.",
+                            style: TextStyle(
+                              fontSize: hh(context, 12),
+                              fontWeight: FontWeight.w500,
+                              color: Clr.white,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "okudum,onayladım.",
-                        style: TextStyle(
-                          fontSize: hh(context, 12),
-                          fontWeight: FontWeight.w500,
-                          color: Clr.white,
-                        ),
-                      ),
-                    ],
-                  ),
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: s.width/9,left: s.width/11.5),
+                    padding: EdgeInsets.only(
+                        right: s.width / 9, left: s.width / 11.5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Checkbox(
-                        checkColor: Colors.white,
-                          fillColor: MaterialStateProperty.resolveWith(getColor),
+                          checkColor: Colors.white,
+                          fillColor:
+                              MaterialStateProperty.resolveWith(getColor),
                           value: isChecked2,
-                            onChanged: (bool? value) {
-                              setState(() {
-                                isChecked2 = value!;
-                            });},),
-                        Row(
-                        children: [
-                        TextButton(
-                          onPressed: () {
-                            Future<String> loadAsset() async {
-                              return await DefaultAssetBundle.of(context).loadString('assets/bonybom_gizlilik_sozlesmesi.txt');
-                            }
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked2 = value!;
+                            });
                           },
-                          child: Text(
-                            "Gizlilik Sözleşmesini",
-                            style: TextStyle(
-                              fontSize: hh(context, 12),
-                              fontWeight: FontWeight.w700,
-                              color: Clr.mainBlue,
-                              letterSpacing: 1,
+                        ),
+                        Row(
+                          children: [
+                            TextButton(
+                              onPressed: () async {
+                                final url =
+                                    "https://bonybom.com/privacy_policy.html";
+                                  openBrowserURL(url: url);
+                              }
+                            ,
+                              child: Text(
+                                "Gizlilik Sözleşmesini",
+                                style: TextStyle(
+                                  fontSize: hh(context, 12),
+                                  fontWeight: FontWeight.w700,
+                                  color: Clr.mainBlue,
+                                  letterSpacing: 1,
+                                ),
+                              ),
                             ),
-                          ),
+                            Text(
+                              "okudum,onayladım.",
+                              style: TextStyle(
+                                fontSize: hh(context, 12),
+                                fontWeight: FontWeight.w500,
+                                color: Clr.white,
+                              ),
+                            ),
+                          ],
                         ),
-                        
-                        Text(
-                          "okudum,onayladım.",
-                          style: TextStyle(
-                            fontSize: hh(context, 12),
-                            fontWeight: FontWeight.w500,
-                            color: Clr.white,
-                          ),
-                        ),
-                      ],
-                    ),
                       ],
                     ),
                   ),
@@ -303,5 +312,15 @@ Color getColor(Set<MaterialState> states) {
         ],
       ),
     );
+  }
+
+  Future openBrowserURL({
+    required String url,
+    bool inApp = false,
+  }) async {
+    if (await canLaunch(url)) {
+      await launch(url,
+          forceSafariVC: inApp, forceWebView: inApp, enableJavaScript: true);
+    }
   }
 }

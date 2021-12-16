@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
-      home: CategorySelect(),
+      home: Auth(),
     );
   }
 }
