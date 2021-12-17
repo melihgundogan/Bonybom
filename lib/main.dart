@@ -1,5 +1,6 @@
+import 'package:bonybom_app/auth.dart';
+import 'package:bonybom_app/country_select/country_choose.dart';
 import 'package:bonybom_app/dark_light.dart';
-import 'package:bonybom_app/screens/home/home_page.dart';
 import 'package:bonybom_app/source/providers.dart';
 import 'package:bonybom_app/source/response_notifier.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
-      home: HomePage(),
+      home: CountryChoose(),
     );
   }
 }

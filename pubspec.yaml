@@ -31,10 +31,12 @@ dependencies:
   google_fonts: ^2.1.0
   swipe: ^0.0.1
   parse_server_sdk_flutter: ^3.1.0
+  country_picker: ^2.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
