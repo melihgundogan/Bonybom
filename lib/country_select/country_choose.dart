@@ -1,5 +1,4 @@
 import 'package:bonybom_app/country_select/country.dart';
-import 'package:bonybom_app/source/icons.dart';
 import 'package:flutter/material.dart';
 
 class CountryChoose extends StatefulWidget {
@@ -8,15 +7,33 @@ class CountryChoose extends StatefulWidget {
 }
 
 class _CountryChooseState extends State<CountryChoose> {
-  static const String _title = 'Flutter Code Sample';
   @override
   Widget build(BuildContext context) {
+    Size s = MediaQuery.of(context).size;
     return MaterialApp(
-      title: _title,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const Center(
-          child: MyStatefulWidget(),
+        body: Container(
+          height: s.height,
+          width: s.width,
+          child: Stack(children: [
+            Opacity(
+              opacity: 0.9,
+              child: Container(
+                width: s.width,
+                height: s.height,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/AutgBg.png"),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ),
+            const Center(
+              child: MyStatefulWidget(),
+            ),
+          ]),
         ),
       ),
     );
@@ -37,6 +54,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     List countries = CountryNotifier().countries;
     return DropdownButton<String>(
       value: dropdownValue,
+      hint: Text("Ülkenizi seçin..."),
       icon: const Icon(Icons.arrow_downward),
       style: const TextStyle(color: Colors.deepPurple),
       underline: Container(
