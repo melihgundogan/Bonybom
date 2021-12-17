@@ -31,14 +31,13 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  String dropdownValue = 'Country';
-
+  String dropdownValue = '<New>';
   @override
   Widget build(BuildContext context) {
+    List countries = CountryNotifier().countries;
     return DropdownButton<String>(
       value: dropdownValue,
       icon: const Icon(Icons.arrow_downward),
-      elevation: 16,
       style: const TextStyle(color: Colors.deepPurple),
       underline: Container(
         height: 2,
@@ -49,11 +48,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           dropdownValue = newValue!;
         });
       },
-      items: <String>['Country', 'Two', 'Free', 'Four']
-          .map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
+      items: countries.map((value) {
+        return new DropdownMenuItem<String>(
+          value: value['id'].toString(),
+          child: new Text(value['name']),
         );
       }).toList(),
     );
