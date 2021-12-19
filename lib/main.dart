@@ -1,6 +1,7 @@
 import 'package:bonybom_app/core/init/navigation/navigation_route.dart';
 import 'package:bonybom_app/core/init/navigation/navigation_service.dart';
 import 'package:bonybom_app/presentation/home/view/home_page.dart';
+import 'package:bonybom_app/screens/notification/notification.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       onGenerateRoute: NavigationRoute.instance.generateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,
-      home: SplashView(),
+      home: NotificationPage(),
     );
   }
 }

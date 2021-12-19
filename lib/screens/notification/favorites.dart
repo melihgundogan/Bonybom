@@ -1,3 +1,4 @@
+import 'package:bonybom_app/components/notification_icon.dart';
 import 'package:bonybom_app/models/favorites_modul.dart';
 import 'package:flutter/material.dart';
 
@@ -120,25 +121,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 7),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.notifications_outlined,
-                                    color: Colors.grey.shade700,
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Icon(
-                                    Icons.cancel_outlined,
-                                    color: Colors.grey.shade700,
-                                  ),
-                                ],
-                              ),
-                            ),
+                            NotificationIcon(),
                             Container(
                               padding: const EdgeInsets.only(
                                   right: 15, top: 5, bottom: 5),
